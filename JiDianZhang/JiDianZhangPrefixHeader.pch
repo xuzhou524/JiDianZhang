@@ -1,0 +1,16 @@
+//
+//  JiDianZhangPrefixHeader.pch
+//  JiDianZhang
+//
+//  Created by gozap on 2019/5/31.
+//  Copyright © 2019 com.longdai. All rights reserved.
+//
+#import "JiDianZhangHeader.h"
+
+#define kWeakSelf typeof(self) __weak weakSelf =self
+
+#define ScreenWidth      [[UIScreen mainScreen] bounds].size.width
+#define ScreenHeight     [[UIScreen mainScreen] bounds].size.height
+
+#define LCFont(x) [UIFont fontWithName:@"Helvetica-Bold" size:(x)]
+#define LCFont2(x) [UIFont fontWithName:@"Helvetica" size:(x)]

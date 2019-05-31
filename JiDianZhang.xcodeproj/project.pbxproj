@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		53879C5B22A11391000B97F8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 53879C5A22A11391000B97F8 /* AppDelegate.m */; };
-		53879C5E22A11391000B97F8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53879C5D22A11391000B97F8 /* ViewController.m */; };
 		53879C6122A11391000B97F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53879C5F22A11391000B97F8 /* Main.storyboard */; };
 		53879C6422A11391000B97F8 /* JiDianZhang.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 53879C6222A11391000B97F8 /* JiDianZhang.xcdatamodeld */; };
 		53879C6622A11393000B97F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53879C6522A11393000B97F8 /* Assets.xcassets */; };
 		53879C6922A11393000B97F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53879C6722A11393000B97F8 /* LaunchScreen.storyboard */; };
 		53879C6C22A11393000B97F8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 53879C6B22A11393000B97F8 /* main.m */; };
+		53879C7A22A117F2000B97F8 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53879C7922A117F2000B97F8 /* HomeViewController.m */; };
+		53879C7D22A118D9000B97F8 /* LCNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53879C7C22A118D9000B97F8 /* LCNavigationViewController.m */; };
+		53879C8022A118E9000B97F8 /* LCColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 53879C7E22A118E9000B97F8 /* LCColor.m */; };
 		E9B37FF49D08243EA4C61A95 /* Pods_JiDianZhang.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C89CC168FADA25067B725F1C /* Pods_JiDianZhang.framework */; };
 /* End PBXBuildFile section */
 
@@ -21,14 +23,20 @@
 		53879C5622A11391000B97F8 /* JiDianZhang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JiDianZhang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53879C5922A11391000B97F8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		53879C5A22A11391000B97F8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		53879C5C22A11391000B97F8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		53879C5D22A11391000B97F8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		53879C6022A11391000B97F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		53879C6322A11391000B97F8 /* JiDianZhang.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JiDianZhang.xcdatamodel; sourceTree = "<group>"; };
 		53879C6522A11393000B97F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		53879C6822A11393000B97F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		53879C6A22A11393000B97F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53879C6B22A11393000B97F8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		53879C7822A117F2000B97F8 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		53879C7922A117F2000B97F8 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		53879C7B22A118D9000B97F8 /* LCNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNavigationViewController.h; sourceTree = "<group>"; };
+		53879C7C22A118D9000B97F8 /* LCNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNavigationViewController.m; sourceTree = "<group>"; };
+		53879C7E22A118E9000B97F8 /* LCColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCColor.m; sourceTree = "<group>"; };
+		53879C7F22A118E9000B97F8 /* LCColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCColor.h; sourceTree = "<group>"; };
+		53879C8122A1192B000B97F8 /* JiDianZhangPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JiDianZhangPrefixHeader.pch; sourceTree = "<group>"; };
+		53879C8222A119E4000B97F8 /* JiDianZhangHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JiDianZhangHeader.h; sourceTree = "<group>"; };
 		715464DCA0FB3A91A317A4BA /* Pods-JiDianZhang.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JiDianZhang.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JiDianZhang/Pods-JiDianZhang.debug.xcconfig"; sourceTree = "<group>"; };
 		952497252F634D2DDB1A1616 /* Pods-JiDianZhang.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JiDianZhang.release.xcconfig"; path = "Pods/Target Support Files/Pods-JiDianZhang/Pods-JiDianZhang.release.xcconfig"; sourceTree = "<group>"; };
 		C89CC168FADA25067B725F1C /* Pods_JiDianZhang.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JiDianZhang.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,10 +83,10 @@
 		53879C5822A11391000B97F8 /* JiDianZhang */ = {
 			isa = PBXGroup;
 			children = (
+				53879C8122A1192B000B97F8 /* JiDianZhangPrefixHeader.pch */,
+				53879C8222A119E4000B97F8 /* JiDianZhangHeader.h */,
 				53879C5922A11391000B97F8 /* AppDelegate.h */,
 				53879C5A22A11391000B97F8 /* AppDelegate.m */,
-				53879C5C22A11391000B97F8 /* ViewController.h */,
-				53879C5D22A11391000B97F8 /* ViewController.m */,
 				53879C5F22A11391000B97F8 /* Main.storyboard */,
 				53879C6522A11393000B97F8 /* Assets.xcassets */,
 				53879C6722A11393000B97F8 /* LaunchScreen.storyboard */,
@@ -126,6 +134,8 @@
 		53879C7622A1165F000B97F8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				53879C7822A117F2000B97F8 /* HomeViewController.h */,
+				53879C7922A117F2000B97F8 /* HomeViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -133,6 +143,10 @@
 		53879C7722A1165F000B97F8 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				53879C7B22A118D9000B97F8 /* LCNavigationViewController.h */,
+				53879C7C22A118D9000B97F8 /* LCNavigationViewController.m */,
+				53879C7F22A118E9000B97F8 /* LCColor.h */,
+				53879C7E22A118E9000B97F8 /* LCColor.m */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -267,9 +281,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53879C5E22A11391000B97F8 /* ViewController.m in Sources */,
 				53879C5B22A11391000B97F8 /* AppDelegate.m in Sources */,
 				53879C6C22A11393000B97F8 /* main.m in Sources */,
+				53879C7D22A118D9000B97F8 /* LCNavigationViewController.m in Sources */,
+				53879C7A22A117F2000B97F8 /* HomeViewController.m in Sources */,
+				53879C8022A118E9000B97F8 /* LCColor.m in Sources */,
 				53879C6422A11391000B97F8 /* JiDianZhang.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -415,6 +431,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6JC78V6G2N;
+				GCC_PREFIX_HEADER = JiDianZhang/JiDianZhangPrefixHeader.pch;
 				INFOPLIST_FILE = JiDianZhang/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -434,6 +451,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6JC78V6G2N;
+				GCC_PREFIX_HEADER = JiDianZhang/JiDianZhangPrefixHeader.pch;
 				INFOPLIST_FILE = JiDianZhang/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
