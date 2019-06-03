@@ -43,7 +43,7 @@
 
 -(void)createHeadView{
     _headView = [UIView new];
-    _headView.backgroundColor = [LCColor LCColor_77_92_127];
+    _headView.backgroundColor = [LCColor backgroudColor];
     [self.view addSubview:_headView];
     [_headView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.top.equalTo(self.view);
@@ -53,7 +53,7 @@
     UILabel * liftLabel = [UILabel new];
     liftLabel.text = @"记点账本";
     liftLabel.font = LCFont(20);
-    liftLabel.textColor = [LCColor backgroudColor];
+    liftLabel.textColor = [LCColor LCColor_77_92_127];
     [self.headView addSubview:liftLabel];
     [liftLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.headView).offset(15);
@@ -62,7 +62,7 @@
     
     UIButton * rightBtn = [UIButton new];
     UIImage * addIamge = [[UIImage imageNamed:@"user"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    rightBtn.tintColor = [LCColor backgroudColor];
+    rightBtn.tintColor = [LCColor LCColor_77_92_127];
     [rightBtn setImage:addIamge forState:UIControlStateNormal];
     [rightBtn addTarget:self action:@selector(rightBtnClick) forControlEvents:UIControlEventTouchUpInside];
     [self.headView addSubview:rightBtn];
@@ -74,7 +74,7 @@
     
     UIButton * tubiaoBtn = [UIButton new];
     UIImage * tubiaoIamge = [[UIImage imageNamed:@"tubiao"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    tubiaoBtn.tintColor = [LCColor backgroudColor];
+    tubiaoBtn.tintColor = [LCColor LCColor_77_92_127];
     [tubiaoBtn setImage:tubiaoIamge forState:UIControlStateNormal];
     [tubiaoBtn addTarget:self action:@selector(tubiaoClick) forControlEvents:UIControlEventTouchUpInside];
     [self.headView addSubview:tubiaoBtn];
@@ -87,7 +87,7 @@
     UILabel * monthLabel = [UILabel new];
     monthLabel.text = @"06月";
     monthLabel.font = LCFont2(15);
-    monthLabel.textColor = [LCColor backgroudColor];
+    monthLabel.textColor = [LCColor LCColor_77_92_127];
     [self.headView addSubview:monthLabel];
     [monthLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.headView).offset(15);
@@ -97,7 +97,7 @@
     UILabel * yearLabel = [UILabel new];
     yearLabel.text = @"2019";
     yearLabel.font = LCFont2(15);
-    yearLabel.textColor = [LCColor backgroudColor];
+    yearLabel.textColor = [LCColor LCColor_77_92_127];
     [self.headView addSubview:yearLabel];
     [yearLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.headView).offset(15);
@@ -105,7 +105,7 @@
     }];
     
     UIView * linView = [UIView new];
-    linView.backgroundColor = [LCColor backgroudColor];
+    linView.backgroundColor = [LCColor LCColor_77_92_127];
     [self.headView addSubview:linView];
     [linView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(monthLabel.mas_right).offset(30);
@@ -117,7 +117,7 @@
     UILabel * budgetLabel = [UILabel new];
     budgetLabel.text = @"1000000";
     budgetLabel.font = LCFont2(15);
-    budgetLabel.textColor = [LCColor backgroudColor];
+    budgetLabel.textColor = [LCColor LCColor_77_92_127];
     [self.headView addSubview:budgetLabel];
     [budgetLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(linView).offset(30);
@@ -127,7 +127,7 @@
     UILabel * budgetTitleLabel = [UILabel new];
     budgetTitleLabel.text = @"收入";
     budgetTitleLabel.font = LCFont2(15);
-    budgetTitleLabel.textColor = [LCColor backgroudColor];
+    budgetTitleLabel.textColor = [LCColor LCColor_77_92_127];
     [self.headView addSubview:budgetTitleLabel];
     [budgetTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(budgetLabel);
@@ -137,7 +137,7 @@
     UILabel * costLabel = [UILabel new];
     costLabel.text = @"100000";
     costLabel.font = LCFont2(15);
-    costLabel.textColor = [LCColor backgroudColor];
+    costLabel.textColor = [LCColor LCColor_77_92_127];
     [self.headView addSubview:costLabel];
     [costLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(budgetLabel.mas_right).offset(20);
@@ -147,7 +147,7 @@
     UILabel * costTitleLabel = [UILabel new];
     costTitleLabel.text = @"支出";
     costTitleLabel.font = LCFont2(15);
-    costTitleLabel.textColor = [LCColor backgroudColor];
+    costTitleLabel.textColor = [LCColor LCColor_77_92_127];
     [self.headView addSubview:costTitleLabel];
     [costTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(costLabel);
@@ -188,7 +188,7 @@
     UILabel *titleLabel = [UILabel new];
     titleLabel.text = @"小记一笔";
     titleLabel.font = LCFont2(18);
-    titleLabel.textColor = [LCColor whiteColor];
+    titleLabel.textColor = [LCColor backgroudColor];
     [addView addSubview:titleLabel];
     [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(addView).offset(10);
