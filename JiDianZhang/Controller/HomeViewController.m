@@ -57,7 +57,7 @@
     [self.view addSubview:_headView];
     [_headView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.top.equalTo(self.view);
-        make.height.equalTo(@100);
+        make.height.equalTo(@110);
     }];
     
     UIImageView * bgImageView = [UIImageView new];
@@ -66,9 +66,10 @@
     [bgImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.headView).offset(15);
         make.right.equalTo(self.headView).offset(-15);
-        make.top.equalTo(self.headView).offset(10);
-        make.bottom.equalTo(self.headView).offset(0);
+        make.top.equalTo(self.headView).offset(15);
+        make.bottom.equalTo(self.headView).offset(-10);
     }];
+    bgImageView.layer.cornerRadius = 5;
     
     UILabel * monthLabel = [UILabel new];
     monthLabel.text = @"06月";
@@ -193,16 +194,17 @@
 }
 
 -(void)createTableView{
-    _tableView = [UITableView new];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView.backgroundColor = [LCColor backgroudColor];
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
     [self.view addSubview:_tableView];
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.bottom.equalTo(self.view);
         make.top.equalTo(self.headView.mas_bottom);
     }];
-    _tableView.delegate = self;
-    _tableView.dataSource = self;
+
     regClass(self.tableView, BookCollectionViewCell);
 }
 
@@ -218,7 +220,7 @@
     return 55;
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return 35;
 }
 
@@ -231,5 +233,14 @@
     BookCollectionViewCell * cell = getCell(BookCollectionViewCell);
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    CGFloat sectionHeaderHeight = 30;
+    if (scrollView.contentOffset.y<=sectionHeaderHeight&&scrollView.contentOffset.y>=0) {
+        scrollView.contentInset = UIEdgeInsetsMake(-scrollView.contentOffset.y, 0, 0, 0);
+    } else if (scrollView.contentOffset.y>=sectionHeaderHeight) {
+        scrollView.contentInset = UIEdgeInsetsMake(-sectionHeaderHeight, 0, 0, 0);
+    }
 }
 @end

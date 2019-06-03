@@ -141,7 +141,7 @@
     _timeLabel.textColor = [LCColor LCColor_113_120_150];
     [self addSubview:_timeLabel];
     [_timeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(self).offset(5);
+        make.centerY.equalTo(self).offset(0);
         make.left.equalTo(self).offset(15);
     }];
 
