@@ -14,3 +14,6 @@
 
 #define LCFont(x) [UIFont fontWithName:@"Helvetica-Bold" size:(x)]
 #define LCFont2(x) [UIFont fontWithName:@"Helvetica" size:(x)]
+
+#define regClass(table,cell ) [table registerClass:[cell class] forCellReuseIdentifier:[NSString stringWithFormat:@"%@", [cell class]]]
+#define getCell(cell) [tableView dequeueReusableCellWithIdentifier:[NSString stringWithFormat:@"%@", [cell class]] forIndexPath:indexPath]
