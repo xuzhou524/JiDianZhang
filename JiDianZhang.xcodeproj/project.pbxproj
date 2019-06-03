@@ -17,6 +17,11 @@
 		53879C7D22A118D9000B97F8 /* LCNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53879C7C22A118D9000B97F8 /* LCNavigationViewController.m */; };
 		53879C8022A118E9000B97F8 /* LCColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 53879C7E22A118E9000B97F8 /* LCColor.m */; };
 		53A2C4B022A4C69300CE799C /* BookListCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 53A2C4AF22A4C69300CE799C /* BookListCollectionViewCell.m */; };
+		53A2C4B322A4DAD500CE799C /* HistoryBillViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53A2C4B222A4DAD500CE799C /* HistoryBillViewController.m */; };
+		53A2C4B622A4DBD200CE799C /* add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 53A2C4B422A4DBD100CE799C /* add@2x.png */; };
+		53A2C4B722A4DBD200CE799C /* add@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 53A2C4B522A4DBD100CE799C /* add@3x.png */; };
+		53A2C4BA22A4DC5100CE799C /* d_Arrow_left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 53A2C4B822A4DC5100CE799C /* d_Arrow_left@2x.png */; };
+		53A2C4BB22A4DC5100CE799C /* d_Arrow_left@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 53A2C4B922A4DC5100CE799C /* d_Arrow_left@3x.png */; };
 		E9B37FF49D08243EA4C61A95 /* Pods_JiDianZhang.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C89CC168FADA25067B725F1C /* Pods_JiDianZhang.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +45,12 @@
 		53879C8222A119E4000B97F8 /* JiDianZhangHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JiDianZhangHeader.h; sourceTree = "<group>"; };
 		53A2C4AE22A4C69300CE799C /* BookListCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookListCollectionViewCell.h; sourceTree = "<group>"; };
 		53A2C4AF22A4C69300CE799C /* BookListCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookListCollectionViewCell.m; sourceTree = "<group>"; };
+		53A2C4B122A4DAD500CE799C /* HistoryBillViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HistoryBillViewController.h; sourceTree = "<group>"; };
+		53A2C4B222A4DAD500CE799C /* HistoryBillViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HistoryBillViewController.m; sourceTree = "<group>"; };
+		53A2C4B422A4DBD100CE799C /* add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add@2x.png"; sourceTree = "<group>"; };
+		53A2C4B522A4DBD100CE799C /* add@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add@3x.png"; sourceTree = "<group>"; };
+		53A2C4B822A4DC5100CE799C /* d_Arrow_left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "d_Arrow_left@2x.png"; sourceTree = "<group>"; };
+		53A2C4B922A4DC5100CE799C /* d_Arrow_left@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "d_Arrow_left@3x.png"; sourceTree = "<group>"; };
 		715464DCA0FB3A91A317A4BA /* Pods-JiDianZhang.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JiDianZhang.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JiDianZhang/Pods-JiDianZhang.debug.xcconfig"; sourceTree = "<group>"; };
 		952497252F634D2DDB1A1616 /* Pods-JiDianZhang.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JiDianZhang.release.xcconfig"; path = "Pods/Target Support Files/Pods-JiDianZhang/Pods-JiDianZhang.release.xcconfig"; sourceTree = "<group>"; };
 		C89CC168FADA25067B725F1C /* Pods_JiDianZhang.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JiDianZhang.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,6 +143,10 @@
 		53879C7522A1165F000B97F8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				53A2C4B422A4DBD100CE799C /* add@2x.png */,
+				53A2C4B522A4DBD100CE799C /* add@3x.png */,
+				53A2C4B822A4DC5100CE799C /* d_Arrow_left@2x.png */,
+				53A2C4B922A4DC5100CE799C /* d_Arrow_left@3x.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -141,6 +156,8 @@
 			children = (
 				53879C7822A117F2000B97F8 /* HomeViewController.h */,
 				53879C7922A117F2000B97F8 /* HomeViewController.m */,
+				53A2C4B122A4DAD500CE799C /* HistoryBillViewController.h */,
+				53A2C4B222A4DAD500CE799C /* HistoryBillViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -224,9 +241,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53A2C4B622A4DBD200CE799C /* add@2x.png in Resources */,
+				53A2C4B722A4DBD200CE799C /* add@3x.png in Resources */,
+				53A2C4BA22A4DC5100CE799C /* d_Arrow_left@2x.png in Resources */,
 				53879C6922A11393000B97F8 /* LaunchScreen.storyboard in Resources */,
 				53879C6622A11393000B97F8 /* Assets.xcassets in Resources */,
 				53879C6122A11391000B97F8 /* Main.storyboard in Resources */,
+				53A2C4BB22A4DC5100CE799C /* d_Arrow_left@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +309,7 @@
 			files = (
 				53879C5B22A11391000B97F8 /* AppDelegate.m in Sources */,
 				53A2C4B022A4C69300CE799C /* BookListCollectionViewCell.m in Sources */,
+				53A2C4B322A4DAD500CE799C /* HistoryBillViewController.m in Sources */,
 				53879C6C22A11393000B97F8 /* main.m in Sources */,
 				53879C7D22A118D9000B97F8 /* LCNavigationViewController.m in Sources */,
 				53879C7A22A117F2000B97F8 /* HomeViewController.m in Sources */,

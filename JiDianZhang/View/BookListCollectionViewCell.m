@@ -31,19 +31,49 @@
     [_bgImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.contentView).offset(10);
         make.right.equalTo(self.contentView).offset(-10);
-        make.bottom.equalTo(self.contentView).offset(-5);
-        make.top.equalTo(self.contentView).offset(15);
+        make.bottom.equalTo(self.contentView).offset(-15);
+        make.top.equalTo(self.contentView).offset(5);
     }];
     
-//    _titleLabel = [UILabel new];
-//    _titleLabel.text = @"指南针";
-//    _titleLabel.font = LCFont(18);
-//    _titleLabel.textColor = [LCColor whiteColor];
-//    [self.contentView addSubview:_titleLabel];
-//    [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.centerY.equalTo(self.bgImageView);
-//        make.left.equalTo(self.bgImageView.mas_centerX);
-//    }];
+    _titleLabel = [UILabel new];
+    _titleLabel.text = @"05月";
+    _titleLabel.font = LCFont(18);
+    _titleLabel.textColor = [LCColor LCColor_77_92_127];
+    [self.contentView addSubview:_titleLabel];
+    [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.bgImageView).offset(15);
+        make.left.equalTo(self.bgImageView).offset(15);
+    }];
+    
+    _costLabel = [UILabel new];
+    _costLabel.text = @"支出 ¥ 234,560";
+    _costLabel.font = LCFont2(13);
+    _costLabel.textColor = [LCColor LCColor_77_92_127];
+    [self.contentView addSubview:_costLabel];
+    [_costLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.titleLabel.mas_bottom).offset(10);
+        make.left.equalTo(self.bgImageView).offset(15);
+    }];
+    
+    _budgetLabel = [UILabel new];
+    _budgetLabel.text = @"收入 ¥ 250,000";
+    _budgetLabel.font = LCFont2(13);
+    _budgetLabel.textColor = [LCColor LCColor_243_90_93];
+    [self.contentView addSubview:_budgetLabel];
+    [_budgetLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.costLabel.mas_bottom).offset(5);
+        make.left.equalTo(self.bgImageView).offset(15);
+    }];
+    
+    _numberLabel = [UILabel new];
+    _numberLabel.text = @"共 15 笔";
+    _numberLabel.font = LCFont2(12);
+    _numberLabel.textColor = [LCColor LCColor_113_120_150];
+    [self.contentView addSubview:_numberLabel];
+    [_numberLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self.bgImageView).offset(-15);
+        make.right.equalTo(self.bgImageView).offset(-15);
+    }];
 //
 //    _iconImageView = [UIImageView new];
 //    [self.contentView addSubview:_iconImageView];
