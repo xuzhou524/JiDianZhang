@@ -23,6 +23,8 @@
 		53A2C4BB22A4DC5100CE799C /* d_Arrow_left@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 53A2C4B922A4DC5100CE799C /* d_Arrow_left@3x.png */; };
 		53A2C4BF22A5141A00CE799C /* tubiao.png in Resources */ = {isa = PBXBuildFile; fileRef = 53A2C4BE22A5141A00CE799C /* tubiao.png */; };
 		53A2C4C122A5146800CE799C /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = 53A2C4C022A5146800CE799C /* user.png */; };
+		53A2C4C422A6171000CE799C /* AddBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53A2C4C322A6171000CE799C /* AddBookViewController.m */; };
+		53A2C4C722A617C100CE799C /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53A2C4C622A617C100CE799C /* UserViewController.m */; };
 		E9B37FF49D08243EA4C61A95 /* Pods_JiDianZhang.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C89CC168FADA25067B725F1C /* Pods_JiDianZhang.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +55,10 @@
 		53A2C4B922A4DC5100CE799C /* d_Arrow_left@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "d_Arrow_left@3x.png"; sourceTree = "<group>"; };
 		53A2C4BE22A5141A00CE799C /* tubiao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tubiao.png; sourceTree = "<group>"; };
 		53A2C4C022A5146800CE799C /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user.png; sourceTree = "<group>"; };
+		53A2C4C222A6171000CE799C /* AddBookViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddBookViewController.h; sourceTree = "<group>"; };
+		53A2C4C322A6171000CE799C /* AddBookViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddBookViewController.m; sourceTree = "<group>"; };
+		53A2C4C522A617C100CE799C /* UserViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserViewController.h; sourceTree = "<group>"; };
+		53A2C4C622A617C100CE799C /* UserViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserViewController.m; sourceTree = "<group>"; };
 		715464DCA0FB3A91A317A4BA /* Pods-JiDianZhang.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JiDianZhang.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JiDianZhang/Pods-JiDianZhang.debug.xcconfig"; sourceTree = "<group>"; };
 		952497252F634D2DDB1A1616 /* Pods-JiDianZhang.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JiDianZhang.release.xcconfig"; path = "Pods/Target Support Files/Pods-JiDianZhang/Pods-JiDianZhang.release.xcconfig"; sourceTree = "<group>"; };
 		C89CC168FADA25067B725F1C /* Pods_JiDianZhang.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JiDianZhang.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,6 +167,10 @@
 				53879C7922A117F2000B97F8 /* HomeViewController.m */,
 				53A2C4B122A4DAD500CE799C /* HistoryBillViewController.h */,
 				53A2C4B222A4DAD500CE799C /* HistoryBillViewController.m */,
+				53A2C4C222A6171000CE799C /* AddBookViewController.h */,
+				53A2C4C322A6171000CE799C /* AddBookViewController.m */,
+				53A2C4C522A617C100CE799C /* UserViewController.h */,
+				53A2C4C622A617C100CE799C /* UserViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -312,11 +322,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53A2C4C722A617C100CE799C /* UserViewController.m in Sources */,
 				53879C5B22A11391000B97F8 /* AppDelegate.m in Sources */,
 				53A2C4B022A4C69300CE799C /* BookListCollectionViewCell.m in Sources */,
 				53A2C4B322A4DAD500CE799C /* HistoryBillViewController.m in Sources */,
 				53879C6C22A11393000B97F8 /* main.m in Sources */,
 				53879C7D22A118D9000B97F8 /* LCNavigationViewController.m in Sources */,
+				53A2C4C422A6171000CE799C /* AddBookViewController.m in Sources */,
 				53879C7A22A117F2000B97F8 /* HomeViewController.m in Sources */,
 				53879C8022A118E9000B97F8 /* LCColor.m in Sources */,
 			);

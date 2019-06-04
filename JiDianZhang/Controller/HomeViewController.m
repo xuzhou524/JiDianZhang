@@ -9,6 +9,8 @@
 #import "HomeViewController.h"
 #import "HistoryBillViewController.h"
 #import "BookListCollectionViewCell.h"
+#import "AddBookViewController.h"
+#import "UserViewController.h"
 
 @interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong)UITableView * tableView;
@@ -40,7 +42,7 @@
     [tubiaoBtn setImage:tubiaoIamge forState:UIControlStateNormal];
     [tubiaoBtn addTarget:self action:@selector(tubiaoClick) forControlEvents:UIControlEventTouchUpInside];
     
-    self.navigationItem.rightBarButtonItems = @[[[UIBarButtonItem alloc] initWithCustomView:tubiaoBtn],[[UIBarButtonItem alloc] initWithCustomView:rightBtn]];
+    self.navigationItem.rightBarButtonItems = @[[[UIBarButtonItem alloc] initWithCustomView:rightBtn],[[UIBarButtonItem alloc] initWithCustomView:tubiaoBtn]];
     
     [self createHeadView];
     [self createTableView];
@@ -48,7 +50,13 @@
 }
 
 -(void)rightBtnClick{
+    UserViewController * userVC = [UserViewController new];
+    [self.navigationController pushViewController:userVC animated:YES];
+}
 
+-(void)tubiaoClick{
+    HistoryBillViewController * historyBillVC = [HistoryBillViewController new];
+    [self.navigationController pushViewController:historyBillVC animated:YES];
 }
 
 -(void)createHeadView{
@@ -140,12 +148,6 @@
         make.left.equalTo(costLabel);
         make.bottom.equalTo(costLabel.mas_top).offset(-5);
     }];
-
-}
-
--(void)tubiaoClick{
-    HistoryBillViewController * historyBillVC = [HistoryBillViewController new];
-    [self.navigationController pushViewController:historyBillVC animated:YES];
 }
 
 -(void)createFootView{
@@ -171,6 +173,7 @@
     addView.layer.shadowOpacity= 0.1;//不透明度
     addView.layer.shadowRadius= 3.0;//半径
     addView.layer.cornerRadius = 5;
+    [addView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapAddBooksView)]];
     
     UILabel *titleLabel = [UILabel new];
     titleLabel.text = @"小记一笔";
@@ -191,6 +194,11 @@
         make.right.equalTo(titleLabel.mas_left).offset(-5);
         make.width.height.equalTo(@25);
     }];
+}
+
+-(void)didTapAddBooksView{
+    AddBookViewController * addBookVC = [AddBookViewController new];
+    [self.navigationController pushViewController:addBookVC animated:YES];
 }
 
 -(void)createTableView{
