@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		53879C5B22A11391000B97F8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 53879C5A22A11391000B97F8 /* AppDelegate.m */; };
 		53879C6122A11391000B97F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53879C5F22A11391000B97F8 /* Main.storyboard */; };
-		53879C6422A11391000B97F8 /* JiDianZhang.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 53879C6222A11391000B97F8 /* JiDianZhang.xcdatamodeld */; };
 		53879C6622A11393000B97F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53879C6522A11393000B97F8 /* Assets.xcassets */; };
 		53879C6922A11393000B97F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53879C6722A11393000B97F8 /* LaunchScreen.storyboard */; };
 		53879C6C22A11393000B97F8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 53879C6B22A11393000B97F8 /* main.m */; };
@@ -32,7 +31,6 @@
 		53879C5922A11391000B97F8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		53879C5A22A11391000B97F8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		53879C6022A11391000B97F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		53879C6322A11391000B97F8 /* JiDianZhang.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JiDianZhang.xcdatamodel; sourceTree = "<group>"; };
 		53879C6522A11393000B97F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		53879C6822A11393000B97F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		53879C6A22A11393000B97F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -110,7 +108,6 @@
 				53879C6722A11393000B97F8 /* LaunchScreen.storyboard */,
 				53879C6A22A11393000B97F8 /* Info.plist */,
 				53879C6B22A11393000B97F8 /* main.m */,
-				53879C6222A11391000B97F8 /* JiDianZhang.xcdatamodeld */,
 				53879C7622A1165F000B97F8 /* Controller */,
 				53879C7422A1165F000B97F8 /* Library */,
 				53879C7322A1165F000B97F8 /* Model */,
@@ -322,7 +319,6 @@
 				53879C7D22A118D9000B97F8 /* LCNavigationViewController.m in Sources */,
 				53879C7A22A117F2000B97F8 /* HomeViewController.m in Sources */,
 				53879C8022A118E9000B97F8 /* LCColor.m in Sources */,
-				53879C6422A11391000B97F8 /* JiDianZhang.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,19 +518,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		53879C6222A11391000B97F8 /* JiDianZhang.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				53879C6322A11391000B97F8 /* JiDianZhang.xcdatamodel */,
-			);
-			currentVersion = 53879C6322A11391000B97F8 /* JiDianZhang.xcdatamodel */;
-			path = JiDianZhang.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 53879C4E22A11390000B97F8 /* Project object */;
 }

@@ -162,9 +162,9 @@
     [_footBgView addSubview:addView];
     [addView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.footBgView).offset(15);
-        make.left.equalTo(self.footBgView).offset(20);
-        make.right.equalTo(self.footBgView).offset(-20);
-        make.height.equalTo(@50);
+        make.left.equalTo(self.footBgView).offset(15);
+        make.right.equalTo(self.footBgView).offset(-15);
+        make.height.equalTo(@48);
     }];
     addView.layer.shadowColor= [LCColor LCColor_110_110_110].CGColor;//阴影颜色
     addView.layer.shadowOffset= CGSizeMake(0,0);//偏移距离
@@ -174,7 +174,7 @@
     
     UILabel *titleLabel = [UILabel new];
     titleLabel.text = @"小记一笔";
-    titleLabel.font = LCFont2(18);
+    titleLabel.font = LCFont2(17);
     titleLabel.textColor = [LCColor backgroudColor];
     [addView addSubview:titleLabel];
     [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
