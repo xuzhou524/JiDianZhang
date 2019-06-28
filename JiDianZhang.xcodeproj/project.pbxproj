@@ -25,6 +25,10 @@
 		53A2C4C122A5146800CE799C /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = 53A2C4C022A5146800CE799C /* user.png */; };
 		53A2C4C422A6171000CE799C /* AddBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53A2C4C322A6171000CE799C /* AddBookViewController.m */; };
 		53A2C4C722A617C100CE799C /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53A2C4C622A617C100CE799C /* UserViewController.m */; };
+		53A753B722C4781700B6A4BC /* CategoryCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 53A753B622C4781700B6A4BC /* CategoryCollectionViewCell.m */; };
+		53A753BB22C4A1AD00B6A4BC /* SPPageMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 53A753B922C4A1AD00B6A4BC /* SPPageMenu.m */; };
+		53A753BE22C4A66300B6A4BC /* SpendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53A753BD22C4A66300B6A4BC /* SpendViewController.m */; };
+		53A753C122C4A67C00B6A4BC /* IncomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53A753C022C4A67C00B6A4BC /* IncomeViewController.m */; };
 		E9B37FF49D08243EA4C61A95 /* Pods_JiDianZhang.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C89CC168FADA25067B725F1C /* Pods_JiDianZhang.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +63,14 @@
 		53A2C4C322A6171000CE799C /* AddBookViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddBookViewController.m; sourceTree = "<group>"; };
 		53A2C4C522A617C100CE799C /* UserViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserViewController.h; sourceTree = "<group>"; };
 		53A2C4C622A617C100CE799C /* UserViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserViewController.m; sourceTree = "<group>"; };
+		53A753B522C4781700B6A4BC /* CategoryCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoryCollectionViewCell.h; sourceTree = "<group>"; };
+		53A753B622C4781700B6A4BC /* CategoryCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoryCollectionViewCell.m; sourceTree = "<group>"; };
+		53A753B922C4A1AD00B6A4BC /* SPPageMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPPageMenu.m; sourceTree = "<group>"; };
+		53A753BA22C4A1AD00B6A4BC /* SPPageMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPPageMenu.h; sourceTree = "<group>"; };
+		53A753BC22C4A66300B6A4BC /* SpendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpendViewController.h; sourceTree = "<group>"; };
+		53A753BD22C4A66300B6A4BC /* SpendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpendViewController.m; sourceTree = "<group>"; };
+		53A753BF22C4A67C00B6A4BC /* IncomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IncomeViewController.h; sourceTree = "<group>"; };
+		53A753C022C4A67C00B6A4BC /* IncomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IncomeViewController.m; sourceTree = "<group>"; };
 		715464DCA0FB3A91A317A4BA /* Pods-JiDianZhang.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JiDianZhang.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JiDianZhang/Pods-JiDianZhang.debug.xcconfig"; sourceTree = "<group>"; };
 		952497252F634D2DDB1A1616 /* Pods-JiDianZhang.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JiDianZhang.release.xcconfig"; path = "Pods/Target Support Files/Pods-JiDianZhang/Pods-JiDianZhang.release.xcconfig"; sourceTree = "<group>"; };
 		C89CC168FADA25067B725F1C /* Pods_JiDianZhang.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JiDianZhang.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +141,8 @@
 			children = (
 				53A2C4AE22A4C69300CE799C /* BookListCollectionViewCell.h */,
 				53A2C4AF22A4C69300CE799C /* BookListCollectionViewCell.m */,
+				53A753B522C4781700B6A4BC /* CategoryCollectionViewCell.h */,
+				53A753B622C4781700B6A4BC /* CategoryCollectionViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -143,6 +157,7 @@
 		53879C7422A1165F000B97F8 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				53A753B822C4A1AD00B6A4BC /* SPPageMenu */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -169,6 +184,10 @@
 				53A2C4B222A4DAD500CE799C /* HistoryBillViewController.m */,
 				53A2C4C222A6171000CE799C /* AddBookViewController.h */,
 				53A2C4C322A6171000CE799C /* AddBookViewController.m */,
+				53A753BC22C4A66300B6A4BC /* SpendViewController.h */,
+				53A753BD22C4A66300B6A4BC /* SpendViewController.m */,
+				53A753BF22C4A67C00B6A4BC /* IncomeViewController.h */,
+				53A753C022C4A67C00B6A4BC /* IncomeViewController.m */,
 				53A2C4C522A617C100CE799C /* UserViewController.h */,
 				53A2C4C622A617C100CE799C /* UserViewController.m */,
 			);
@@ -184,6 +203,15 @@
 				53879C7E22A118E9000B97F8 /* LCColor.m */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		53A753B822C4A1AD00B6A4BC /* SPPageMenu */ = {
+			isa = PBXGroup;
+			children = (
+				53A753B922C4A1AD00B6A4BC /* SPPageMenu.m */,
+				53A753BA22C4A1AD00B6A4BC /* SPPageMenu.h */,
+			);
+			path = SPPageMenu;
 			sourceTree = "<group>";
 		};
 		E0EABF922AAA1F6863D7D3B3 /* Pods */ = {
@@ -322,8 +350,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53A753B722C4781700B6A4BC /* CategoryCollectionViewCell.m in Sources */,
+				53A753BE22C4A66300B6A4BC /* SpendViewController.m in Sources */,
+				53A753BB22C4A1AD00B6A4BC /* SPPageMenu.m in Sources */,
 				53A2C4C722A617C100CE799C /* UserViewController.m in Sources */,
 				53879C5B22A11391000B97F8 /* AppDelegate.m in Sources */,
+				53A753C122C4A67C00B6A4BC /* IncomeViewController.m in Sources */,
 				53A2C4B022A4C69300CE799C /* BookListCollectionViewCell.m in Sources */,
 				53A2C4B322A4DAD500CE799C /* HistoryBillViewController.m in Sources */,
 				53879C6C22A11393000B97F8 /* main.m in Sources */,
