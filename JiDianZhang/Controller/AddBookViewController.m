@@ -46,16 +46,15 @@
             baseVc.title = [self.pageMenu contentForItemAtIndex:i];
             [self addChildViewController:baseVc];
             [self.myChildViewControllers addObject:baseVc];
+
+            [self.scrollView addSubview:baseVc.view];
+            baseVc.view.frame = CGRectMake(ScreenWidth * i, 0, ScreenWidth, ScreenHeight);
         }
     }
-    // pageMenu.selectedItemIndex就是选中的item下标
-    if (self.pageMenu.selectedItemIndex < self.myChildViewControllers.count) {
-        UIViewController *baseVc = self.myChildViewControllers[self.pageMenu.selectedItemIndex];
-        [self.scrollView addSubview:baseVc.view];
-        baseVc.view.frame = CGRectMake(ScreenWidth*self.pageMenu.selectedItemIndex, 0, ScreenWidth, ScreenHeight);
-        self.scrollView.contentOffset = CGPointMake(ScreenWidth*self.pageMenu.selectedItemIndex, 0);
-        self.scrollView.contentSize = CGSizeMake(self.titleDataArray.count*ScreenWidth, 0);
-    }
+    
+    self.scrollView.contentOffset = CGPointMake(ScreenWidth * 0, 0);
+    self.scrollView.contentSize = CGSizeMake(self.titleDataArray.count * ScreenWidth, 0);
+
 }
 
 #pragma mark - SPPageMenu的代理方法
