@@ -87,6 +87,7 @@
         TitleAndImageTableViewCell * cell = getCell(TitleAndImageTableViewCell);
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.timeTitleLabel.text = @"今天";
+        return cell;
         //        cell.summeryLabel.text = [DateFormatter stringFromBirthday:[DateFormatter dateFromTimeStampString:self.eventModel.time]];
     }
     return [UITableViewCell new];
