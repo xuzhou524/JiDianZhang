@@ -53,8 +53,8 @@
         UIViewController *baseVc = self.myChildViewControllers[self.pageMenu.selectedItemIndex];
         [self.scrollView addSubview:baseVc.view];
         baseVc.view.frame = CGRectMake(ScreenWidth*self.pageMenu.selectedItemIndex, 0, ScreenWidth, ScreenHeight);
-        self.scrollView .contentOffset = CGPointMake(ScreenWidth*self.pageMenu.selectedItemIndex, 0);
-        self.scrollView .contentSize = CGSizeMake(self.titleDataArray.count*ScreenWidth, 0);
+        self.scrollView.contentOffset = CGPointMake(ScreenWidth*self.pageMenu.selectedItemIndex, 0);
+        self.scrollView.contentSize = CGSizeMake(self.titleDataArray.count*ScreenWidth, 0);
     }
 }
 

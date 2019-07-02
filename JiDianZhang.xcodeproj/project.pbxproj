@@ -29,6 +29,8 @@
 		53A753BB22C4A1AD00B6A4BC /* SPPageMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 53A753B922C4A1AD00B6A4BC /* SPPageMenu.m */; };
 		53A753BE22C4A66300B6A4BC /* SpendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53A753BD22C4A66300B6A4BC /* SpendViewController.m */; };
 		53A753C122C4A67C00B6A4BC /* IncomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53A753C022C4A67C00B6A4BC /* IncomeViewController.m */; };
+		53AE236E22CB35A300D82909 /* edit_title.png in Resources */ = {isa = PBXBuildFile; fileRef = 53AE236D22CB35A300D82909 /* edit_title.png */; };
+		53AE237022CB39F900D82909 /* shijian.png in Resources */ = {isa = PBXBuildFile; fileRef = 53AE236F22CB39F900D82909 /* shijian.png */; };
 		E9B37FF49D08243EA4C61A95 /* Pods_JiDianZhang.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C89CC168FADA25067B725F1C /* Pods_JiDianZhang.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +73,8 @@
 		53A753BD22C4A66300B6A4BC /* SpendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpendViewController.m; sourceTree = "<group>"; };
 		53A753BF22C4A67C00B6A4BC /* IncomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IncomeViewController.h; sourceTree = "<group>"; };
 		53A753C022C4A67C00B6A4BC /* IncomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IncomeViewController.m; sourceTree = "<group>"; };
+		53AE236D22CB35A300D82909 /* edit_title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit_title.png; sourceTree = "<group>"; };
+		53AE236F22CB39F900D82909 /* shijian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shijian.png; sourceTree = "<group>"; };
 		715464DCA0FB3A91A317A4BA /* Pods-JiDianZhang.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JiDianZhang.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JiDianZhang/Pods-JiDianZhang.debug.xcconfig"; sourceTree = "<group>"; };
 		952497252F634D2DDB1A1616 /* Pods-JiDianZhang.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JiDianZhang.release.xcconfig"; path = "Pods/Target Support Files/Pods-JiDianZhang/Pods-JiDianZhang.release.xcconfig"; sourceTree = "<group>"; };
 		C89CC168FADA25067B725F1C /* Pods_JiDianZhang.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JiDianZhang.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -165,6 +169,8 @@
 		53879C7522A1165F000B97F8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				53AE236F22CB39F900D82909 /* shijian.png */,
+				53AE236D22CB35A300D82909 /* edit_title.png */,
 				53A2C4C022A5146800CE799C /* user.png */,
 				53A2C4BE22A5141A00CE799C /* tubiao.png */,
 				53A2C4B422A4DBD100CE799C /* add@2x.png */,
@@ -282,8 +288,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53AE236E22CB35A300D82909 /* edit_title.png in Resources */,
 				53A2C4B622A4DBD200CE799C /* add@2x.png in Resources */,
 				53A2C4B722A4DBD200CE799C /* add@3x.png in Resources */,
+				53AE237022CB39F900D82909 /* shijian.png in Resources */,
 				53A2C4C122A5146800CE799C /* user.png in Resources */,
 				53A2C4BA22A4DC5100CE799C /* d_Arrow_left@2x.png in Resources */,
 				53A2C4BF22A5141A00CE799C /* tubiao.png in Resources */,
@@ -302,27 +310,16 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-JiDianZhang/Pods-JiDianZhang-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
-				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
-				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
-				"${BUILT_PRODUCTS_DIR}/XHLaunchAd/XHLaunchAd.framework",
-				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JiDianZhang/Pods-JiDianZhang-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XHLaunchAd.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JiDianZhang/Pods-JiDianZhang-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JiDianZhang/Pods-JiDianZhang-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JiDianZhang/Pods-JiDianZhang-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D68419116499B933FE5D5A59 /* [CP] Check Pods Manifest.lock */ = {

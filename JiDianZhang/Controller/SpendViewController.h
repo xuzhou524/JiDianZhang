@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface SpendViewController : UIViewController
-@property (nonatomic, copy) NSString *title;
+
 @end
