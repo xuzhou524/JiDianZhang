@@ -14,7 +14,6 @@
     self = [super initWithFrame:frame];
     if (self) {
         [self sebView];
-        
     }
     return self;
 }
@@ -33,17 +32,21 @@
     }];
     
     _iconImageView = [UIImageView new];
-    _iconImageView.backgroundColor = [UIColor orangeColor];
     [self.contentView addSubview:_iconImageView];
     [_iconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.contentView);
-        make.bottom.equalTo(self.titleLabel.mas_top).offset(-5);
-        make.width.height.equalTo(@28);
+        make.bottom.equalTo(self.titleLabel.mas_top);
+        make.width.height.equalTo(@44);
     }];
-    
-
 }
 
+- (void)setSelected:(BOOL)selected{
+    if (selected) {
+       _iconImageView.backgroundColor = [UIColor redColor];
+    }else{
+       _iconImageView.backgroundColor = [LCColor backgroudColor];
+    }
+}
 @end
 
 

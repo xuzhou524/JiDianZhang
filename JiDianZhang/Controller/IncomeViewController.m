@@ -12,6 +12,7 @@
 @interface IncomeViewController ()<UITableViewDelegate,UITableViewDataSource,UICollectionViewDataSource,UICollectionViewDelegate>
 @property(nonatomic,strong)UICollectionView * collectionView;
 @property(nonatomic,strong)NSArray * incomeArray;
+@property(nonatomic,strong)NSArray * incomeIconArray;
 @property(nonatomic,strong)UITableView * tableView;
 @end
 
@@ -23,6 +24,7 @@
     self.view.backgroundColor = [LCColor backgroudColor];
     
     self.incomeArray = @[@"工资",@"兼职",@"理财",@"礼金",@"其它"];
+    self.incomeIconArray = @[@"i_wage_l",@"i_parttimework_l",@"i_finance_l",@"i_money_l",@"i_other_l"];
     
     [self createTableView];
     
@@ -90,7 +92,6 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.timeTitleLabel.text = @"今天";
         return cell;
-        //        cell.summeryLabel.text = [DateFormatter stringFromBirthday:[DateFormatter dateFromTimeStampString:self.eventModel.time]];
     }
     return [UITableViewCell new];
 }
@@ -99,7 +100,6 @@
 #pragma mark -- UICollectionView DataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    
     return self.incomeArray.count;
 }
 
@@ -110,6 +110,9 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     CategoryCollectionViewCell *cell = (CategoryCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"CategoryCollectionViewCell" forIndexPath:indexPath];
+    cell.titleLabel.text = self.incomeArray[indexPath.row];
+    cell.iconImageView.image = [UIImage imageNamed:self.incomeIconArray[indexPath.row]];
+    [cell.iconImageView.image setAccessibilityIdentifier:self.incomeIconArray[indexPath.row]];
     return cell;
 }
 

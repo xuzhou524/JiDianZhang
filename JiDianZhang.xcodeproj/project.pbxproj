@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -169,6 +169,7 @@
 		53879C7522A1165F000B97F8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				53CDC3E622CC88B500C7EFAA /* income */,
 				53AE236F22CB39F900D82909 /* shijian.png */,
 				53AE236D22CB35A300D82909 /* edit_title.png */,
 				53A2C4C022A5146800CE799C /* user.png */,
@@ -218,6 +219,13 @@
 				53A753BA22C4A1AD00B6A4BC /* SPPageMenu.h */,
 			);
 			path = SPPageMenu;
+			sourceTree = "<group>";
+		};
+		53CDC3E622CC88B500C7EFAA /* income */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = income;
 			sourceTree = "<group>";
 		};
 		E0EABF922AAA1F6863D7D3B3 /* Pods */ = {
