@@ -11,7 +11,7 @@
 
 @interface SpendViewController ()<UITableViewDelegate,UITableViewDataSource,UICollectionViewDataSource,UICollectionViewDelegate>
 @property(nonatomic,strong)UICollectionView * collectionView;
-
+@property(nonatomic,strong)NSArray * spendArray;
 @property(nonatomic,strong)UITableView * tableView;
 @end
 
@@ -21,7 +21,11 @@
     [super viewDidLoad];
     self.navigationItem.title = self.title;
     self.view.backgroundColor = [LCColor backgroudColor];
-    
+    self.spendArray = @[@"餐饮",@"零食",@"购物",@"交通",@"运动",@"医疗",@"宠物",
+                        @"书籍",@"学习",@"礼物",@"办公",@"快递",@"社交",@"美容",
+                        @"水果",@"旅行",@"娱乐",@"礼金",@"蔬菜",@"住房",@"孩子",
+                        @"通讯",@"服饰",@"日用",@"烟酒",@"数码",@"居家",@"其它"];
+
     [self createTableView];
     
     UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(backupgroupTap:)];
@@ -53,7 +57,7 @@
     flowLayout.minimumInteritemSpacing = 0;
     flowLayout.minimumLineSpacing = 0;
 
-    _collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 4 * ScreenWidth  / 7.00) collectionViewLayout:flowLayout];
+    _collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ((self.spendArray.count/6) + (self.spendArray.count%6 != 0 ? 1 : 0) ) * ScreenWidth  / 6.00) collectionViewLayout:flowLayout];
     _collectionView.dataSource = self;
     _collectionView.delegate = self;
     _collectionView.backgroundColor = [LCColor backgroudColor];
@@ -98,16 +102,17 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
 
-    return 24;
+    return self.spendArray.count;
 }
 
 //item大小
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
-    return CGSizeMake(ScreenWidth / 7.00, ScreenWidth  / 7.00);
+    return CGSizeMake(ScreenWidth / 6.00, ScreenWidth  / 6.00);
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     CategoryCollectionViewCell *cell = (CategoryCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"CategoryCollectionViewCell" forIndexPath:indexPath];
+    cell.titleLabel.text = self.spendArray[indexPath.row];
     return cell;
 }
 

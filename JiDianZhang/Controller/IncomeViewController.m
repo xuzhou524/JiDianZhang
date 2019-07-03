@@ -11,7 +11,7 @@
 
 @interface IncomeViewController ()<UITableViewDelegate,UITableViewDataSource,UICollectionViewDataSource,UICollectionViewDelegate>
 @property(nonatomic,strong)UICollectionView * collectionView;
-
+@property(nonatomic,strong)NSArray * incomeArray;
 @property(nonatomic,strong)UITableView * tableView;
 @end
 
@@ -21,6 +21,8 @@
     [super viewDidLoad];
     self.navigationItem.title = self.title;
     self.view.backgroundColor = [LCColor backgroudColor];
+    
+    self.incomeArray = @[@"工资",@"兼职",@"理财",@"礼金",@"其它"];
     
     [self createTableView];
     
@@ -53,7 +55,7 @@
     flowLayout.minimumInteritemSpacing = 0;
     flowLayout.minimumLineSpacing = 0;
     
-    _collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 4 * ScreenWidth  / 7.00) collectionViewLayout:flowLayout];
+    _collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ((self.incomeArray.count/5) + (self.incomeArray.count%5 != 0 ? 1 : 0) ) * ScreenWidth  / 5.00) collectionViewLayout:flowLayout];
     _collectionView.dataSource = self;
     _collectionView.delegate = self;
     _collectionView.backgroundColor = [LCColor backgroudColor];
@@ -98,12 +100,12 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     
-    return 16;
+    return self.incomeArray.count;
 }
 
 //item大小
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
-    return CGSizeMake(ScreenWidth / 7.00, ScreenWidth  / 7.00);
+    return CGSizeMake(ScreenWidth / 5.00, ScreenWidth  / 5.00);
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{

@@ -29,7 +29,7 @@
     [self.contentView addSubview:_titleLabel];
     [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.contentView);
-        make.bottom.equalTo(self.contentView).offset(-2);
+        make.bottom.equalTo(self.contentView);
     }];
     
     _iconImageView = [UIImageView new];
@@ -37,7 +37,7 @@
     [self.contentView addSubview:_iconImageView];
     [_iconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.contentView);
-        make.bottom.equalTo(self.titleLabel.mas_top).offset(-8);
+        make.bottom.equalTo(self.titleLabel.mas_top).offset(-5);
         make.width.height.equalTo(@28);
     }];
     
