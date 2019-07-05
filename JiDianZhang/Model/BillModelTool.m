@@ -9,6 +9,7 @@
 #import "BillModelTool.h"
 #import "BillModel.h"
 #import "FMDB.h"
+#import "DateFormatter.h"
 
 @implementation BillModelTool
 static FMDatabaseQueue *_queue;
@@ -42,6 +43,41 @@ static FMDatabaseQueue *_queue;
             dataTime.category = [rs stringForColumn:@"category"];
             dataTime.iconTypeId = [rs stringForColumn:@"iconTypeId"];
             [diaryArray addObject:dataTime];
+        }
+    }];
+    return diaryArray;
+}
+
++(NSMutableArray *)queryWithCurrentMonthTime{
+    __block BillModel * dataTime;
+    __block NSMutableArray *diaryArray = nil;
+    [_queue inDatabase:^(FMDatabase *db){
+        diaryArray = [NSMutableArray array];
+        FMResultSet *rs = nil;
+        rs = [db executeQuery:@"select * from Bill_Tab"];
+        while (rs.next){
+            dataTime = [[BillModel alloc]init];
+            dataTime.ids = [rs intForColumn:@"ids"];
+            dataTime.amount = [rs stringForColumn:@"amount"];
+            dataTime.content = [rs stringForColumn:@"content"];
+            dataTime.time = [rs stringForColumn:@"time"];
+            dataTime.category = [rs stringForColumn:@"category"];
+            dataTime.iconTypeId = [rs stringForColumn:@"iconTypeId"];
+            
+            NSCalendar *gregorian = [[ NSCalendar alloc ] initWithCalendarIdentifier : NSCalendarIdentifierGregorian];
+            unsigned unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay;
+            
+            //格式化时间
+            NSDate *createDate = [DateFormatter dateFromTimeStampString:dataTime.time];
+            NSDateComponents* components = [gregorian components:unitFlags fromDate:createDate];
+            [components setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT+0800"]];
+            //格式化现在时间
+            NSDateComponents* newDateComponent = [gregorian components:unitFlags fromDate:[NSDate date]];
+            [newDateComponent setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT+0800"]];
+            
+            if (components.month == newDateComponent.month) {
+                [diaryArray addObject:dataTime];
+            }
         }
     }];
     return diaryArray;

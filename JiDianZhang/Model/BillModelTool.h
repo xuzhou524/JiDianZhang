@@ -12,6 +12,8 @@
 @interface BillModelTool : NSObject
 +(NSMutableArray *)queryWithTime;
 
++(NSMutableArray *)queryWithCurrentMonthTime;
+
 +(void)deleteTime:(int)ids;
 
 +(void)insertTime:(BillModel *)diaryTime;
