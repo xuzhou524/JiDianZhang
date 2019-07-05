@@ -8,6 +8,7 @@ def pods
    pod 'SDWebImage'
    pod 'YYModel'
    pod 'XHLaunchAd'
+   pod 'FMDB'
 end
 
 

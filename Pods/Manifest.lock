@@ -1,5 +1,8 @@
 PODS:
   - FLAnimatedImage (1.0.12)
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
   - Masonry (1.1.0)
   - MBProgressHUD (1.1.0)
   - SDWebImage (5.0.6):
@@ -10,6 +13,7 @@ PODS:
   - YYModel (1.0.4)
 
 DEPENDENCIES:
+  - FMDB
   - Masonry
   - MBProgressHUD
   - SDWebImage
@@ -19,6 +23,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - FLAnimatedImage
+    - FMDB
     - Masonry
     - MBProgressHUD
     - SDWebImage
@@ -27,12 +32,13 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   SDWebImage: 920f1a2ff1ca8296ad34f6e0510a1ef1d70ac965
   XHLaunchAd: 45048592af01aa501c9d2d0c45e95ca74c4d0596
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: b54bf1051ebd4c73558c306c3c1f0b17a56deb04
+PODFILE CHECKSUM: 2fbfe5c1d52fb8241b57e573817900021ab2de04
 
 COCOAPODS: 1.7.3
