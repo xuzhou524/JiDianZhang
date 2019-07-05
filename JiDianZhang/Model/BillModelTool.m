@@ -48,11 +48,11 @@ static FMDatabaseQueue *_queue;
     return diaryArray;
 }
 
-+(NSMutableArray *)queryWithCurrentMonthTime{
++(NSMutableDictionary *)queryWithCurrentMonthTime{
     __block BillModel * dataTime;
-    __block NSMutableArray *diaryArray = nil;
+    __block NSMutableDictionary * dictionary = nil;
     [_queue inDatabase:^(FMDatabase *db){
-        diaryArray = [NSMutableArray array];
+        dictionary = [NSMutableDictionary new];
         FMResultSet *rs = nil;
         rs = [db executeQuery:@"select * from Bill_Tab"];
         while (rs.next){
@@ -74,13 +74,18 @@ static FMDatabaseQueue *_queue;
             //格式化现在时间
             NSDateComponents* newDateComponent = [gregorian components:unitFlags fromDate:[NSDate date]];
             [newDateComponent setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT+0800"]];
-            
-            if (components.month == newDateComponent.month) {
-                [diaryArray addObject:dataTime];
+
+            if (components.year == newDateComponent.year && components.month == newDateComponent.month) {
+                NSMutableArray * array = [dictionary objectForKey:[NSString stringWithFormat:@"%ld",(long)components.day]];
+                if (array.count <= 0) {
+                    array = [NSMutableArray array];
+                }
+                [array addObject:dataTime];
+                [dictionary setObject:array forKey:[NSString stringWithFormat:@"%ld",(long)components.day]];
             }
         }
     }];
-    return diaryArray;
+    return dictionary;
 }
 
 +(void)deleteTime:(int)ids{

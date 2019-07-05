@@ -46,6 +46,14 @@
     return result;
 }
 
++ (NSString*) stringFromStringMonthDay:(NSDate*)date{
+    NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT+0800"]];
+    [dateFormatter setDateFormat:@"MM月dd日"];
+    NSString *result = [dateFormatter stringFromDate:date];
+    return result;
+}
+
 + (NSString*) stringFromStringDay:(NSDate*)date{
     NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT+0800"]];

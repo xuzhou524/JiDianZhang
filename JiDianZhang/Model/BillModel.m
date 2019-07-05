@@ -14,8 +14,8 @@
     return [BillModelTool queryWithTime];
 }
 
--(NSMutableArray *)queryWithCurrentMonthTime;{
-    return [BillModelTool queryWithTime];
+-(NSMutableDictionary *)queryWithCurrentMonthTime;{
+    return [BillModelTool queryWithCurrentMonthTime];
 }
 
 -(void)deleteTime:(int)ids{

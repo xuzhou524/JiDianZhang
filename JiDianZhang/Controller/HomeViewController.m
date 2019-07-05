@@ -11,14 +11,27 @@
 #import "BookListCollectionViewCell.h"
 #import "AddBookViewController.h"
 #import "UserViewController.h"
+#import "BillModel.h"
 
 @interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong)UITableView * tableView;
 @property(nonatomic,strong)UIView * footBgView;
 @property(nonatomic,strong)UIView * headView;
+
+@property (nonatomic, strong) NSMutableDictionary * billModelDic;
+@property (nonatomic, strong) NSMutableArray * billDicAllKeyArray;
+@property (nonatomic, strong) BillModel * billModel;
 @end
 
 @implementation HomeViewController
+
+-(BillModel *)billModel{
+    if (_billModel == nil){
+        _billModel = [BillModel new];
+    }
+    return _billModel;
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -43,6 +56,10 @@
     [tubiaoBtn addTarget:self action:@selector(tubiaoClick) forControlEvents:UIControlEventTouchUpInside];
     
     self.navigationItem.rightBarButtonItems = @[[[UIBarButtonItem alloc] initWithCustomView:rightBtn],[[UIBarButtonItem alloc] initWithCustomView:tubiaoBtn]];
+    
+    self.billModelDic = [self.billModel queryWithCurrentMonthTime];
+    
+    self.billDicAllKeyArray = [self.billModelDic allKeys];
     
     [self createHeadView];
     [self createTableView];
@@ -217,11 +234,13 @@
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 5;
+    return self.billDicAllKeyArray.count;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 3;
+    NSString * key = self.billDicAllKeyArray[section];
+    NSMutableArray * array = [self.billModelDic objectForKey:key];
+    return array.count;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -234,12 +253,22 @@
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     BookHeadView * bookHeadView = [BookHeadView new];
+    NSMutableArray * array = [self.billModelDic objectForKey:self.billDicAllKeyArray[section]];
+    BillModel * model = array.firstObject;
+    bookHeadView.timeLabel.text = [DateFormatter stringFromStringMonthDay:[DateFormatter dateFromTimeStampString:model.time]];
+    bookHeadView.weekLabel.text = [DateFormatter weekdayStringWithDate:[DateFormatter dateFromTimeStampString:model.time]];
     return bookHeadView;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     BookCollectionViewCell * cell = getCell(BookCollectionViewCell);
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    NSMutableArray * array = [self.billModelDic objectForKey:self.billDicAllKeyArray[indexPath.section]];
+    
+    BillModel * model = array[indexPath.row];
+    cell.numberLabel.text = model.amount;
+    
     return cell;
 }
 

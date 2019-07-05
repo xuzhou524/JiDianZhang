@@ -12,7 +12,7 @@
 @interface BillModelTool : NSObject
 +(NSMutableArray *)queryWithTime;
 
-+(NSMutableArray *)queryWithCurrentMonthTime;
++(NSMutableDictionary *)queryWithCurrentMonthTime;
 
 +(void)deleteTime:(int)ids;
 
