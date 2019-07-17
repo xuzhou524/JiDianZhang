@@ -47,6 +47,7 @@
     
     regClass(self.tableView, TextFieldTableViewCell);
     regClass(self.tableView, TitleAndImageTableViewCell);
+    regClass(self.tableView, SaveTableViewCell);
     
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     flowLayout.minimumInteritemSpacing = 0;
@@ -69,10 +70,13 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 2;
+    return 3;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.row == 2) {
+        return 100;
+    }
     return 65;
 }
 
@@ -87,13 +91,20 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.timeTitleLabel.text = @"今天";
         return cell;
+    }else if (indexPath.row == 2){
+        SaveTableViewCell * cell = getCell(SaveTableViewCell);
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        [cell.saveButton addTarget:self action:@selector(saveClick) forControlEvents:UIControlEventTouchUpInside];
+        return cell;
     }
     return [UITableViewCell new];
 }
 
+-(void)saveClick{
+    
+}
 
 #pragma mark -- UICollectionView DataSource
-
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return [SpendManager readLocalIncomeIconFile].count;
 }

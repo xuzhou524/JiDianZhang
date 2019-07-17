@@ -47,6 +47,7 @@
     
     regClass(self.tableView, TextFieldTableViewCell);
     regClass(self.tableView, TitleAndImageTableViewCell);
+    regClass(self.tableView, SaveTableViewCell);
     
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     flowLayout.minimumInteritemSpacing = 0;
@@ -69,10 +70,13 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 2;
+    return 3;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.row == 2) {
+        return 100;
+    }
     return 65;
 }
 
@@ -88,8 +92,17 @@
         cell.timeTitleLabel.text = @"今天";
         return cell;
 //        cell.summeryLabel.text = [DateFormatter stringFromBirthday:[DateFormatter dateFromTimeStampString:self.eventModel.time]];
+    }else if (indexPath.row == 2){
+        SaveTableViewCell * cell = getCell(SaveTableViewCell);
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        [cell.saveButton addTarget:self action:@selector(saveClick) forControlEvents:UIControlEventTouchUpInside];
+        return cell;
     }
     return [UITableViewCell new];
+}
+
+-(void)saveClick{
+    
 }
 
 

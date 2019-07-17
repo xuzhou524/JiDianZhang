@@ -25,3 +25,8 @@
 @property(nonatomic,strong)UIImageView * noteIconImageView;
 @property(nonatomic,strong)UITextField * noteTitleTextField;
 @end
+
+
+@interface SaveTableViewCell : UITableViewCell
+@property(nonatomic,strong)UIButton * saveButton;
+@end

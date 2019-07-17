@@ -191,3 +191,31 @@
 }
 @end
 
+
+@implementation SaveTableViewCell
+-(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (self) {
+        [self sebView];
+    }
+    return self;
+}
+
+-(void)sebView{
+    self.backgroundColor = [LCColor backgroudColor];
+    
+    _saveButton = [UIButton new];
+    [_saveButton setTitle:@"保存" forState:UIControlStateNormal];
+    [_saveButton setTitleColor:[LCColor whiteColor] forState:UIControlStateNormal];
+    [_saveButton setBackgroundColor:[LCColor LCColor_77_92_127]];
+    [self.contentView addSubview:_saveButton];
+    [_saveButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.contentView).offset(20);
+        make.right.equalTo(self.contentView).offset(-20);
+        make.bottom.equalTo(self.contentView).offset(-10);
+        make.height.equalTo(@48);
+    }];
+    _saveButton.layer.cornerRadius = 5;
+}
+@end
+
