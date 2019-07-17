@@ -9,6 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "BillModel.h"
 
+@interface BookTotalHeadView : UIView
+@property(nonatomic,strong)UILabel * budgetLabel;
+@property(nonatomic,strong)UILabel * costLabel;
+@end
+
 @interface BookListCollectionViewCell : UICollectionViewCell
 @property(nonatomic,strong)UIImageView * bgImageView;
 @property(nonatomic,strong)UILabel * titleLabel;

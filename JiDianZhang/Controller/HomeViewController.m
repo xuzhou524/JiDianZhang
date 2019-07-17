@@ -16,7 +16,7 @@
 @interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong)UITableView * tableView;
 @property(nonatomic,strong)UIView * footBgView;
-@property(nonatomic,strong)UIView * headView;
+@property(nonatomic,strong)BookTotalHeadView * headView;
 
 @property (nonatomic, strong) NSMutableDictionary * billModelDic;
 @property (nonatomic, strong) NSMutableArray * billDicAllKeyArray;
@@ -32,6 +32,32 @@
     return _billModel;
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    self.billModelDic = [self.billModel queryWithCurrentMonthTime];
+    self.billDicAllKeyArray = (NSMutableArray *)[self.billModelDic allKeys];
+    [self calculateTheAmountoOfMonthly];
+    [self.tableView reloadData];
+}
+
+-(void)calculateTheAmountoOfMonthly{
+    NSInteger spendMoney = 0;
+    NSInteger incomeMoney = 0;
+    for (int i = 0; i < self.billModelDic.count; i++) {
+        NSString * key = self.billDicAllKeyArray[i];
+        NSMutableArray * array = [self.billModelDic objectForKey:key];
+        for (BillModel * model in array) {
+            if ([model.category isEqualToString:JD_CATEGORY_SPEND]) {
+                spendMoney += [model.amount integerValue];
+            }else{
+                incomeMoney += [model.amount integerValue];
+            }
+        }
+    }
+    _headView.budgetLabel.text = [NSString stringWithFormat:@"%ld",spendMoney];
+    _headView.costLabel.text = [NSString stringWithFormat:@"%ld",incomeMoney];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -56,12 +82,6 @@
     [tubiaoBtn addTarget:self action:@selector(tubiaoClick) forControlEvents:UIControlEventTouchUpInside];
     
     self.navigationItem.rightBarButtonItems = @[[[UIBarButtonItem alloc] initWithCustomView:rightBtn],[[UIBarButtonItem alloc] initWithCustomView:tubiaoBtn]];
-    
-    self.billModelDic = [self.billModel queryWithCurrentMonthTime];
-    
-    self.billDicAllKeyArray = (NSMutableArray *)[self.billModelDic allKeys];
-    
-    [self createHeadView];
     [self createTableView];
     [self createFootView];
 }
@@ -76,95 +96,11 @@
     [self.navigationController pushViewController:historyBillVC animated:YES];
 }
 
--(void)createHeadView{
-    _headView = [UIView new];
-    _headView.backgroundColor = [LCColor backgroudColor];
-    [self.view addSubview:_headView];
-    [_headView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.top.equalTo(self.view);
-        make.height.equalTo(@110);
-    }];
-    
-    UIImageView * bgImageView = [UIImageView new];
-    bgImageView.backgroundColor = [LCColor LCColor_77_92_127];
-    [self.headView addSubview:bgImageView];
-    [bgImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.headView).offset(15);
-        make.right.equalTo(self.headView).offset(-15);
-        make.top.equalTo(self.headView).offset(15);
-        make.bottom.equalTo(self.headView).offset(-10);
-    }];
-    bgImageView.layer.cornerRadius = 5;
-    
-    UILabel * monthLabel = [UILabel new];
-    monthLabel.text = @"06月";
-    monthLabel.font = LCFont2(15);
-    monthLabel.textColor = [LCColor backgroudColor];
-    [bgImageView addSubview:monthLabel];
-    [monthLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(bgImageView).offset(15);
-        make.top.equalTo(bgImageView.mas_centerY).offset(10);
-    }];
-    
-    UILabel * yearLabel = [UILabel new];
-    yearLabel.text = @"2019";
-    yearLabel.font = LCFont2(15);
-    yearLabel.textColor = [LCColor backgroudColor];
-    [bgImageView addSubview:yearLabel];
-    [yearLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(bgImageView).offset(15);
-        make.bottom.equalTo(monthLabel.mas_top).offset(-5);
-    }];
-    
-    UIView * linView = [UIView new];
-    linView.backgroundColor = [LCColor backgroudColor];
-    [bgImageView addSubview:linView];
-    [linView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(monthLabel.mas_right).offset(30);
-        make.top.equalTo(yearLabel.mas_bottom);
-        make.bottom.equalTo(monthLabel.mas_bottom);
-        make.width.equalTo(@1);
-    }];
-    
-    UILabel * budgetLabel = [UILabel new];
-    budgetLabel.text = @"1000000";
-    budgetLabel.font = LCFont2(15);
-    budgetLabel.textColor = [LCColor backgroudColor];
-    [bgImageView addSubview:budgetLabel];
-    [budgetLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(linView).offset(30);
-        make.centerY.equalTo(monthLabel);
-    }];
-    
-    UILabel * budgetTitleLabel = [UILabel new];
-    budgetTitleLabel.text = @"收入";
-    budgetTitleLabel.font = LCFont2(15);
-    budgetTitleLabel.textColor = [LCColor backgroudColor];
-    [bgImageView addSubview:budgetTitleLabel];
-    [budgetTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(budgetLabel);
-        make.bottom.equalTo(budgetLabel.mas_top).offset(-5);
-    }];
-    
-    UILabel * costLabel = [UILabel new];
-    costLabel.text = @"100000";
-    costLabel.font = LCFont2(15);
-    costLabel.textColor = [LCColor backgroudColor];
-    [bgImageView addSubview:costLabel];
-    [costLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(budgetLabel.mas_right).offset(20);
-        make.centerY.equalTo(monthLabel);
-    }];
-    
-    UILabel * costTitleLabel = [UILabel new];
-    costTitleLabel.text = @"支出";
-    costTitleLabel.font = LCFont2(15);
-    costTitleLabel.textColor = [LCColor backgroudColor];
-    [bgImageView addSubview:costTitleLabel];
-    [costTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(costLabel);
-        make.bottom.equalTo(costLabel.mas_top).offset(-5);
-    }];
+-(BookTotalHeadView *)headView{
+    if (_headView == nil) {
+        _headView = [[BookTotalHeadView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 110)];
+    }
+    return _headView;
 }
 
 -(void)createFootView{
@@ -226,9 +162,10 @@
     _tableView.dataSource = self;
     [self.view addSubview:_tableView];
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.bottom.equalTo(self.view);
-        make.top.equalTo(self.headView.mas_bottom);
+        make.left.top.right.bottom.equalTo(self.view);
     }];
+    
+    self.tableView.tableHeaderView = self.headView;
 
     regClass(self.tableView, BookCollectionViewCell);
 }

@@ -8,6 +8,106 @@
 
 #import "BookListCollectionViewCell.h"
 
+@implementation BookTotalHeadView
+-(instancetype)initWithFrame:(CGRect)frame{
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self sebView];
+        
+    }
+    return self;
+}
+
+-(void)sebView{
+    self.backgroundColor = [LCColor backgroudColor];
+    
+    UIImageView * bgImageView = [UIImageView new];
+    bgImageView.backgroundColor = [LCColor LCColor_77_92_127];
+    [self addSubview:bgImageView];
+    [bgImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self).offset(15);
+        make.right.equalTo(self).offset(-15);
+        make.top.equalTo(self).offset(15);
+        make.bottom.equalTo(self).offset(-10);
+    }];
+    bgImageView.layer.cornerRadius = 5;
+    
+    NSCalendar *gregorian = [[ NSCalendar alloc ] initWithCalendarIdentifier : NSCalendarIdentifierGregorian];
+    unsigned unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay;
+    NSDateComponents* newDateComponent = [gregorian components:unitFlags fromDate:[NSDate date]];
+    [newDateComponent setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT+0800"]];
+
+    UILabel * monthLabel = [UILabel new];
+    monthLabel.text =[NSString stringWithFormat:@"%ld月",(long)newDateComponent.month];
+    monthLabel.font = LCFont2(15);
+    monthLabel.textColor = [LCColor backgroudColor];
+    [bgImageView addSubview:monthLabel];
+    [monthLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(bgImageView).offset(15);
+        make.top.equalTo(bgImageView.mas_centerY).offset(10);
+    }];
+
+    UILabel * yearLabel = [UILabel new];
+    yearLabel.text = [NSString stringWithFormat:@"%ld",(long)newDateComponent.year];
+    yearLabel.font = LCFont2(15);
+    yearLabel.textColor = [LCColor backgroudColor];
+    [bgImageView addSubview:yearLabel];
+    [yearLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(bgImageView).offset(15);
+        make.bottom.equalTo(monthLabel.mas_top).offset(-5);
+    }];
+    
+    UIView * linView = [UIView new];
+    linView.backgroundColor = [LCColor backgroudColor];
+    [bgImageView addSubview:linView];
+    [linView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(monthLabel.mas_right).offset(30);
+        make.top.equalTo(yearLabel.mas_bottom);
+        make.bottom.equalTo(monthLabel.mas_bottom);
+        make.width.equalTo(@1);
+    }];
+
+    _budgetLabel = [UILabel new];
+    _budgetLabel.font = LCFont2(15);
+    _budgetLabel.textColor = [LCColor backgroudColor];
+    [bgImageView addSubview:_budgetLabel];
+    [_budgetLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(linView).offset(30);
+        make.centerY.equalTo(monthLabel);
+    }];
+
+    UILabel * budgetTitleLabel = [UILabel new];
+    budgetTitleLabel.text = @"收入";
+    budgetTitleLabel.font = LCFont2(15);
+    budgetTitleLabel.textColor = [LCColor backgroudColor];
+    [bgImageView addSubview:budgetTitleLabel];
+    [budgetTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.budgetLabel);
+        make.bottom.equalTo(self.budgetLabel.mas_top).offset(-5);
+    }];
+
+    _costLabel = [UILabel new];
+    _costLabel.font = LCFont2(15);
+    _costLabel.textColor = [LCColor backgroudColor];
+    [bgImageView addSubview:_costLabel];
+    [_costLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.budgetLabel.mas_right).offset(20);
+        make.centerY.equalTo(monthLabel);
+    }];
+
+    UILabel * costTitleLabel = [UILabel new];
+    costTitleLabel.text = @"支出";
+    costTitleLabel.font = LCFont2(15);
+    costTitleLabel.textColor = [LCColor backgroudColor];
+    [bgImageView addSubview:costTitleLabel];
+    [costTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.costLabel);
+        make.bottom.equalTo(self.costLabel.mas_top).offset(-5);
+    }];
+}
+
+@end
+
 @implementation BookListCollectionViewCell
 
 -(instancetype)initWithFrame:(CGRect)frame{
@@ -95,7 +195,7 @@
     [_iconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.contentView);
         make.left.equalTo(self.contentView).offset(15);
-        make.width.height.equalTo(@28);
+        make.width.height.equalTo(@38);
     }];
 
     _titleLabel = [UILabel new];
@@ -105,7 +205,7 @@
     [self.contentView addSubview:_titleLabel];
     [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.iconImageView);
-        make.left.equalTo(self.iconImageView.mas_right).offset(15);
+        make.left.equalTo(self.iconImageView.mas_right).offset(10);
     }];
 
     _numberLabel = [UILabel new];
