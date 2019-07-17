@@ -1,0 +1,154 @@
+{
+    "code":200,
+    "msg":"success",
+    "data":[
+        {
+            "imageId":"1001",
+            "title":"餐饮",
+            "imageName":"e_catering_l",
+            "imageName_sel":"e_catering_l"
+        },
+        {
+            "imageId":"1002",
+            "title":"零食",
+            "imageName":"e_snack_l",
+            "imageName_sel":"e_snack_l"
+        },
+        {
+            "imageId":"1003",
+            "title":"购物",
+            "imageName":"e_shopping_l",
+            "imageName_sel":"e_shopping_l"
+        },
+        {
+            "imageId":"1004",
+            "title":"交通",
+            "imageName":"e_traffic_l",
+            "imageName_sel":"e_traffic_l"
+        },
+        {
+            "imageId":"1005",
+            "title":"运动",
+            "imageName":"e_sport_l",
+            "imageName_sel":"e_sport_l"
+        },
+        {
+            "imageId":"1006",
+            "title":"医疗",
+            "imageName":"e_medical_l",
+            "imageName_sel":"e_medical_l"
+        },
+        {
+            "imageId":"1007",
+            "title":"宠物",
+            "imageName":"e_pet_l",
+            "imageName_sel":"e_pet_l"
+        },
+        {
+            "imageId":"1008",
+            "title":"书籍",
+            "imageName":"e_books_l",
+            "imageName_sel":"e_books_l"
+        },        {
+            "imageId":"1009",
+            "title":"学习",
+            "imageName":"e_study_l",
+            "imageName_sel":"e_study_l"
+        },        {
+            "imageId":"1010",
+            "title":"礼物",
+            "imageName":"e_gift_l",
+            "imageName_sel":"e_gift_l"
+        },        {
+            "imageId":"1011",
+            "title":"办公",
+            "imageName":"e_office_l",
+            "imageName_sel":"e_office_l"
+        },        {
+            "imageId":"1012",
+            "title":"快递",
+            "imageName":"e_express_l",
+            "imageName_sel":"e_express_l"
+        }, {
+            "imageId":"1013",
+            "title":"社交",
+            "imageName":"e_social_l",
+            "imageName_sel":"e_social_l"
+        }, {
+            "imageId":"1014",
+            "title":"美容",
+            "imageName":"e_beauty_l",
+            "imageName_sel":"e_beauty_l"
+        }, {
+            "imageId":"1015",
+            "title":"水果",
+            "imageName":"e_fruite_l",
+            "imageName_sel":"e_fruite_l"
+        }, {
+            "imageId":"1016",
+            "title":"旅行",
+            "imageName":"e_travel_l",
+            "imageName_sel":"e_travel_l"
+        }, {
+            "imageId":"1017",
+            "title":"娱乐",
+            "imageName":"e_entertainmente_l",
+            "imageName_sel":"e_entertainmente_l"
+        }, {
+            "imageId":"1018",
+            "title":"礼金",
+            "imageName":"e_money_l",
+            "imageName_sel":"e_money_l"
+        }, {
+            "imageId":"1019",
+            "title":"蔬菜",
+            "imageName":"e_vegetable_l",
+            "imageName_sel":"e_vegetable_l"
+        }, {
+            "imageId":"1020",
+            "title":"住房",
+            "imageName":"e_house_l",
+            "imageName_sel":"e_house_l"
+        }, {
+            "imageId":"1021",
+            "title":"孩子",
+            "imageName":"e_child_l",
+            "imageName_sel":"e_child_l"
+        }, {
+            "imageId":"1022",
+            "title":"通讯",
+            "imageName":"e_communicate_l",
+            "imageName_sel":"e_communicate_l"
+        }, {
+            "imageId":"1023",
+            "title":"服饰",
+            "imageName":"e_dress_l",
+            "imageName_sel":"e_dress_l"
+        }, {
+            "imageId":"1024",
+            "title":"日用",
+            "imageName":"e_commodity_l",
+            "imageName_sel":"e_commodity_l"
+        }, {
+            "imageId":"1025",
+            "title":"烟酒",
+            "imageName":"e_smoke_l",
+            "imageName_sel":"e_smoke_l"
+        }, {
+            "imageId":"1026",
+            "title":"数码",
+            "imageName":"e_digital_l",
+            "imageName_sel":"e_digital_l"
+        }, {
+            "imageId":"1027",
+            "title":"居家",
+            "imageName":"e_home_l",
+            "imageName_sel":"e_home_l"
+        }, {
+            "imageId":"1028",
+            "title":"其它",
+            "imageName":"i_other_l",
+            "imageName_sel":"i_other_l"
+        }
+    ]
+}

@@ -1,0 +1,36 @@
+{
+    "code":200,
+    "msg":"success",
+    "data":[
+        {
+            "imageId":"2001",
+            "title":"工资",
+            "imageName":"i_wage_l",
+            "imageName_sel":"i_wage_l"
+        },
+        {
+            "imageId":"2002",
+            "title":"兼职",
+            "imageName":"i_parttimework_l",
+            "imageName_sel":"i_parttimework_l"
+        },
+        {
+            "imageId":"2003",
+            "title":"理财",
+            "imageName":"i_finance_l",
+            "imageName_sel":"i_finance_l"
+        },
+        {
+            "imageId":"2004",
+            "title":"礼金",
+            "imageName":"i_money_l",
+            "imageName_sel":"i_money_l"
+        },
+        {
+            "imageId":"2005",
+            "title":"其它",
+            "imageName":"i_other_l",
+            "imageName_sel":"i_other_l"
+        }
+    ]
+}

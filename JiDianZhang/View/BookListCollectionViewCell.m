@@ -91,7 +91,6 @@
     self.contentView.backgroundColor = [LCColor backgroudColor];
     
     _iconImageView = [UIImageView new];
-    _iconImageView.backgroundColor = [UIColor orangeColor];
     [self.contentView addSubview:_iconImageView];
     [_iconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.contentView);
@@ -118,6 +117,23 @@
         make.centerY.equalTo(self.contentView);
         make.right.equalTo(self.contentView).offset(-15);
     }];
+}
+
+-(void)bind:(BillModel *)model{
+    self.numberLabel.text = model.amount;
+    if ([model.category isEqualToString:JD_CATEGORY_SPEND]) {
+        ImageModel * imageModel = [SpendManager readLocalSpendIconFileWithImageId:model.iconTypeId];
+        self.iconImageView.image = [UIImage imageNamed:imageModel.imageName];
+        self.titleLabel.text = imageModel.title;
+        self.numberLabel.text = model.amount;
+        self.numberLabel.textColor = [LCColor LCColor_113_120_150];
+    }else{
+        ImageModel * imageModel = [SpendManager readLocalIncomeIconFileWithImageId:model.iconTypeId];
+        self.iconImageView.image = [UIImage imageNamed:imageModel.imageName];
+        self.titleLabel.text = imageModel.title;
+        self.numberLabel.text = model.amount;
+        self.numberLabel.textColor = [LCColor LCColor_243_90_93];
+    }
 }
 @end
 
@@ -174,5 +190,24 @@
         make.centerY.equalTo(self.timeLabel);
         make.right.equalTo(self.costLabel.mas_left).offset(-10);
     }];
+}
+
+-(void)bind:(NSMutableArray *)modelArray{
+    BillModel * model = modelArray.firstObject;
+    self.timeLabel.text = [DateFormatter stringFromStringMonthDay:[DateFormatter dateFromTimeStampString:model.time]];
+    self.weekLabel.text = [DateFormatter weekdayStringWithDate:[DateFormatter dateFromTimeStampString:model.time]];
+    
+    NSInteger spendMoney = 0;
+    NSInteger incomeMoney = 0;
+    for (int i = 0; i < modelArray.count; i ++) {
+        BillModel * model = modelArray[i];
+        if ([model.category isEqualToString:JD_CATEGORY_SPEND]) {
+            spendMoney += [model.amount integerValue];
+        }else{
+            incomeMoney += [model.amount integerValue];
+        }
+    }
+    self.costLabel.text = [NSString stringWithFormat:@"支出: %ld",(long)spendMoney];
+    self.budgetLabel.text = [NSString stringWithFormat:@"收入: %ld",(long)incomeMoney];
 }
 @end

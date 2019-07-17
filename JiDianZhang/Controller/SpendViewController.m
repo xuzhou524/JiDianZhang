@@ -11,8 +11,6 @@
 
 @interface SpendViewController ()<UITableViewDelegate,UITableViewDataSource,UICollectionViewDataSource,UICollectionViewDelegate>
 @property(nonatomic,strong)UICollectionView * collectionView;
-@property(nonatomic,strong)NSArray * spendIconArray;
-@property(nonatomic,strong)NSArray * spendArray;
 @property(nonatomic,strong)UITableView * tableView;
 @end
 
@@ -22,15 +20,6 @@
     [super viewDidLoad];
     self.navigationItem.title = self.title;
     self.view.backgroundColor = [LCColor backgroudColor];
-    self.spendArray = @[@"餐饮",@"零食",@"购物",@"交通",@"运动",@"医疗",@"宠物",
-                        @"书籍",@"学习",@"礼物",@"办公",@"快递",@"社交",@"美容",
-                        @"水果",@"旅行",@"娱乐",@"礼金",@"蔬菜",@"住房",@"孩子",
-                        @"通讯",@"服饰",@"日用",@"烟酒",@"数码",@"居家",@"其它"];
-    
-    self.spendIconArray = @[@"e_catering_l",@"e_snack_l",@"e_shopping_l",@"e_traffic_l",@"e_sport_l",@"e_medical_l",@"e_pet_l",
-                            @"e_books_l",@"e_study_l",@"e_gift_l",@"e_office_l",@"e_express_l",@"e_social_l",@"e_beauty_l",
-                            @"e_fruite_l",@"e_travel_l",@"e_entertainmente_l",@"e_money_l",@"e_vegetable_l",@"e_house_l",@"e_child_l",
-                            @"e_communicate_l",@"e_dress_l",@"e_commodity_l",@"e_smoke_l",@"e_digital_l",@"e_home_l",@"i_other_l"];
 
     [self createTableView];
     
@@ -63,7 +52,7 @@
     flowLayout.minimumInteritemSpacing = 0;
     flowLayout.minimumLineSpacing = 0;
 
-    _collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ((self.spendArray.count/6) + (self.spendArray.count%6 != 0 ? 1 : 0) ) * ScreenWidth  / 6.00) collectionViewLayout:flowLayout];
+    _collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, (([SpendManager readLocalSpendIconFile].count/6) + ([SpendManager readLocalSpendIconFile].count%6 != 0 ? 1 : 0) ) * ScreenWidth  / 6.00) collectionViewLayout:flowLayout];
     _collectionView.dataSource = self;
     _collectionView.delegate = self;
     _collectionView.backgroundColor = [LCColor backgroudColor];
@@ -108,7 +97,7 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
 
-    return self.spendArray.count;
+    return [SpendManager readLocalSpendIconFile].count;
 }
 
 //item大小
@@ -118,8 +107,9 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     CategoryCollectionViewCell *cell = (CategoryCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"CategoryCollectionViewCell" forIndexPath:indexPath];
-    cell.titleLabel.text = self.spendArray[indexPath.row];
-    cell.iconImageView.image = [UIImage imageNamed:self.spendIconArray[indexPath.row]];
+    ImageModel * model = [SpendManager readLocalSpendIconFile][indexPath.row];
+    cell.titleLabel.text = model.title;
+    cell.iconImageView.image = [UIImage imageNamed:model.imageName];
     return cell;
 }
 

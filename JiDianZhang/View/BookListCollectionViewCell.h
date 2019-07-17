@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BillModel.h"
 
 @interface BookListCollectionViewCell : UICollectionViewCell
 @property(nonatomic,strong)UIImageView * bgImageView;
@@ -21,6 +22,8 @@
 @property(nonatomic,strong)UIImageView * iconImageView;
 @property(nonatomic,strong)UILabel * titleLabel;
 @property(nonatomic,strong)UILabel * numberLabel;
+
+-(void)bind:(BillModel *)model;
 @end
 
 @interface BookHeadView : UIView
@@ -28,4 +31,6 @@
 @property(nonatomic,strong)UILabel * weekLabel;
 @property(nonatomic,strong)UILabel * costLabel;
 @property(nonatomic,strong)UILabel * budgetLabel;
+
+-(void)bind:(NSMutableArray *)modelArray;
 @end

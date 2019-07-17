@@ -59,7 +59,7 @@
     
     self.billModelDic = [self.billModel queryWithCurrentMonthTime];
     
-    self.billDicAllKeyArray = [self.billModelDic allKeys];
+    self.billDicAllKeyArray = (NSMutableArray *)[self.billModelDic allKeys];
     
     [self createHeadView];
     [self createTableView];
@@ -254,9 +254,7 @@
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     BookHeadView * bookHeadView = [BookHeadView new];
     NSMutableArray * array = [self.billModelDic objectForKey:self.billDicAllKeyArray[section]];
-    BillModel * model = array.firstObject;
-    bookHeadView.timeLabel.text = [DateFormatter stringFromStringMonthDay:[DateFormatter dateFromTimeStampString:model.time]];
-    bookHeadView.weekLabel.text = [DateFormatter weekdayStringWithDate:[DateFormatter dateFromTimeStampString:model.time]];
+    [bookHeadView bind:array];
     return bookHeadView;
 }
 
@@ -265,10 +263,7 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     NSMutableArray * array = [self.billModelDic objectForKey:self.billDicAllKeyArray[indexPath.section]];
-    
-    BillModel * model = array[indexPath.row];
-    cell.numberLabel.text = model.amount;
-    
+    [cell bind:array[indexPath.row]];
     return cell;
 }
 

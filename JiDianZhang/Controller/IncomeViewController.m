@@ -11,8 +11,6 @@
 
 @interface IncomeViewController ()<UITableViewDelegate,UITableViewDataSource,UICollectionViewDataSource,UICollectionViewDelegate>
 @property(nonatomic,strong)UICollectionView * collectionView;
-@property(nonatomic,strong)NSArray * incomeArray;
-@property(nonatomic,strong)NSArray * incomeIconArray;
 @property(nonatomic,strong)UITableView * tableView;
 @end
 
@@ -22,9 +20,6 @@
     [super viewDidLoad];
     self.navigationItem.title = self.title;
     self.view.backgroundColor = [LCColor backgroudColor];
-    
-    self.incomeArray = @[@"工资",@"兼职",@"理财",@"礼金",@"其它"];
-    self.incomeIconArray = @[@"i_wage_l",@"i_parttimework_l",@"i_finance_l",@"i_money_l",@"i_other_l"];
     
     [self createTableView];
     
@@ -57,7 +52,7 @@
     flowLayout.minimumInteritemSpacing = 0;
     flowLayout.minimumLineSpacing = 0;
     
-    _collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ((self.incomeArray.count/5) + (self.incomeArray.count%5 != 0 ? 1 : 0) ) * ScreenWidth  / 5.00) collectionViewLayout:flowLayout];
+    _collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, (([SpendManager readLocalIncomeIconFile].count/5) + ([SpendManager readLocalIncomeIconFile].count%5 != 0 ? 1 : 0) ) * ScreenWidth  / 5.00) collectionViewLayout:flowLayout];
     _collectionView.dataSource = self;
     _collectionView.delegate = self;
     _collectionView.backgroundColor = [LCColor backgroudColor];
@@ -100,7 +95,7 @@
 #pragma mark -- UICollectionView DataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return self.incomeArray.count;
+    return [SpendManager readLocalIncomeIconFile].count;
 }
 
 //item大小
@@ -110,9 +105,9 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     CategoryCollectionViewCell *cell = (CategoryCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"CategoryCollectionViewCell" forIndexPath:indexPath];
-    cell.titleLabel.text = self.incomeArray[indexPath.row];
-    cell.iconImageView.image = [UIImage imageNamed:self.incomeIconArray[indexPath.row]];
-    [cell.iconImageView.image setAccessibilityIdentifier:self.incomeIconArray[indexPath.row]];
+    ImageModel * mdeol = [SpendManager readLocalIncomeIconFile][indexPath.row];
+    cell.titleLabel.text = mdeol.title;
+    cell.iconImageView.image = [UIImage imageNamed:mdeol.imageName];
     return cell;
 }
 

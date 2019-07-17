@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		537CA1C922DEB8D500B355EB /* SpendManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 537CA1C822DEB8D500B355EB /* SpendManager.m */; };
+		537CA1CB22DEBAF600B355EB /* SpendData.json in Resources */ = {isa = PBXBuildFile; fileRef = 537CA1CA22DEBAF600B355EB /* SpendData.json */; };
+		537CA1CD22DEBEB900B355EB /* IncomeData.json in Resources */ = {isa = PBXBuildFile; fileRef = 537CA1CC22DEBEB900B355EB /* IncomeData.json */; };
 		53879C5B22A11391000B97F8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 53879C5A22A11391000B97F8 /* AppDelegate.m */; };
 		53879C6122A11391000B97F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53879C5F22A11391000B97F8 /* Main.storyboard */; };
 		53879C6622A11393000B97F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53879C6522A11393000B97F8 /* Assets.xcassets */; };
@@ -39,6 +42,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		537CA1C722DEB8D500B355EB /* SpendManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpendManager.h; sourceTree = "<group>"; };
+		537CA1C822DEB8D500B355EB /* SpendManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpendManager.m; sourceTree = "<group>"; };
+		537CA1CA22DEBAF600B355EB /* SpendData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SpendData.json; sourceTree = "<group>"; };
+		537CA1CC22DEBEB900B355EB /* IncomeData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = IncomeData.json; sourceTree = "<group>"; };
 		53879C5622A11391000B97F8 /* JiDianZhang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JiDianZhang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53879C5922A11391000B97F8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		53879C5A22A11391000B97F8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -111,6 +118,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		537CA1C422DEB77A00B355EB /* Json */ = {
+			isa = PBXGroup;
+			children = (
+				537CA1CC22DEBEB900B355EB /* IncomeData.json */,
+				537CA1CA22DEBAF600B355EB /* SpendData.json */,
+			);
+			path = Json;
+			sourceTree = "<group>";
+		};
 		53879C4D22A11390000B97F8 = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +185,8 @@
 				53CDC3F922CF42A600C7EFAA /* BillModel.m */,
 				53CDC3FB22CF42FE00C7EFAA /* BillModelTool.h */,
 				53CDC3FC22CF42FE00C7EFAA /* BillModelTool.m */,
+				537CA1C722DEB8D500B355EB /* SpendManager.h */,
+				537CA1C822DEB8D500B355EB /* SpendManager.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -184,6 +202,7 @@
 		53879C7522A1165F000B97F8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				537CA1C422DEB77A00B355EB /* Json */,
 				53CDC3F522CF41A700C7EFAA /* SQLfile */,
 				53CDC3E622CC88B500C7EFAA /* income */,
 				53AE236F22CB39F900D82909 /* shijian.png */,
@@ -330,10 +349,12 @@
 				53A2C4C122A5146800CE799C /* user.png in Resources */,
 				53A2C4BA22A4DC5100CE799C /* d_Arrow_left@2x.png in Resources */,
 				53A2C4BF22A5141A00CE799C /* tubiao.png in Resources */,
+				537CA1CD22DEBEB900B355EB /* IncomeData.json in Resources */,
 				53879C6922A11393000B97F8 /* LaunchScreen.storyboard in Resources */,
 				53879C6622A11393000B97F8 /* Assets.xcassets in Resources */,
 				53879C6122A11391000B97F8 /* Main.storyboard in Resources */,
 				53A2C4BB22A4DC5100CE799C /* d_Arrow_left@3x.png in Resources */,
+				537CA1CB22DEBAF600B355EB /* SpendData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,6 +405,7 @@
 			files = (
 				53A753B722C4781700B6A4BC /* CategoryCollectionViewCell.m in Sources */,
 				53CDC3FD22CF42FE00C7EFAA /* BillModelTool.m in Sources */,
+				537CA1C922DEB8D500B355EB /* SpendManager.m in Sources */,
 				53A753BE22C4A66300B6A4BC /* SpendViewController.m in Sources */,
 				53A753BB22C4A1AD00B6A4BC /* SPPageMenu.m in Sources */,
 				53A2C4C722A617C100CE799C /* UserViewController.m in Sources */,

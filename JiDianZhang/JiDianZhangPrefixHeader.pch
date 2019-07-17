@@ -17,3 +17,7 @@
 
 #define regClass(table,cell ) [table registerClass:[cell class] forCellReuseIdentifier:[NSString stringWithFormat:@"%@", [cell class]]]
 #define getCell(cell) [tableView dequeueReusableCellWithIdentifier:[NSString stringWithFormat:@"%@", [cell class]] forIndexPath:indexPath]
+
+
+#define JD_CATEGORY_SPEND     @"101"
+#define JD_CATEGORY_INCOME     @"102"
