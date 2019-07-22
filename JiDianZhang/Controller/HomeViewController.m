@@ -36,6 +36,16 @@
     
     self.billModelDic = [self.billModel queryWithCurrentMonthTime];
     self.billDicAllKeyArray = (NSMutableArray *)[self.billModelDic allKeys];
+    
+    NSArray * billDicAllKeyArray = [self.billModelDic allKeys];
+    
+    self.billDicAllKeyArray = (NSMutableArray *)[billDicAllKeyArray sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        if([obj1 integerValue] < [obj2 integerValue]){
+            return NSOrderedDescending;
+        }
+        return NSOrderedAscending;
+    }];
+    
     [self calculateTheAmountoOfMonthly];
     [self.tableView reloadData];
 }
