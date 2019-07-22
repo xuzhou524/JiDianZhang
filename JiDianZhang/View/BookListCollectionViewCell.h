@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BillModel.h"
 
 @interface BookTotalHeadView : UIView
 @property(nonatomic,strong)UILabel * budgetLabel;

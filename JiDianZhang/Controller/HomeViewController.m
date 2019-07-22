@@ -11,7 +11,6 @@
 #import "BookListCollectionViewCell.h"
 #import "AddBookViewController.h"
 #import "UserViewController.h"
-#import "BillModel.h"
 
 @interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong)UITableView * tableView;

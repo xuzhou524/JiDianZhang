@@ -10,3 +10,4 @@
 #import "Masonry.h"
 #import "DateFormatter.h"
 #import "SpendManager.h"
+#import "BillModel.h"

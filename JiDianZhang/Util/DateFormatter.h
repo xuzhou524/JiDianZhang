@@ -14,6 +14,8 @@
 
 + (NSDate *)dateFromTimeStampString:(NSString *)timeStamp;  //时间戳 转 Data
 
++ (NSString*) stringMillisecondFromDate:(NSDate *)date;
+
 + (NSString*) stringFromBirthday:(NSDate*)date;//Date 转 时间字符串  yyyy-MM-dd
 + (NSString*) stringFromStringYeayWeek:(NSDate*)date;//Date 转 时间字符串  yyyy年MM月
 + (NSString*) stringFromStringMonthDay:(NSDate*)date;//Date 转 时间字符串  MM月DD日

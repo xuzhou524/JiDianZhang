@@ -85,7 +85,25 @@ static FMDatabaseQueue *_queue;
             }
         }
     }];
-    return dictionary;
+    //排序
+    NSMutableDictionary * newDictionary = nil;
+    if (dictionary) {
+        newDictionary = [NSMutableDictionary new];
+        NSArray * billDicAllKeyArray = [dictionary allKeys];
+        NSMutableArray *newBillDicAllKeyArray = (NSMutableArray *)[billDicAllKeyArray sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+            if([obj1 intValue] < [obj2 intValue]){
+                return NSOrderedAscending;
+            }
+            if([obj1 intValue] > [obj2 intValue]){
+                return NSOrderedDescending;
+            }
+            return NSOrderedSame;
+        }];
+        for (int i = 0; i < newBillDicAllKeyArray.count; i ++) {
+            [newDictionary setObject:[dictionary objectForKey:newBillDicAllKeyArray[i]] forKey:newBillDicAllKeyArray[i]];
+        }
+    }
+    return newDictionary;
 }
 
 +(void)deleteTime:(int)ids{
@@ -96,7 +114,7 @@ static FMDatabaseQueue *_queue;
 
 +(void)insertTime:(BillModel *)diaryTime{
     [_queue inDatabase:^(FMDatabase *db){
-        [db executeUpdate:@"insert into Bill_Tab(amount, content, time, category, iconTypeId) values (?, ?, ?, ?)",diaryTime.amount, diaryTime.content, diaryTime.time, diaryTime.category, diaryTime.iconTypeId];
+        [db executeUpdate:@"insert into Bill_Tab(amount, content, time, category, iconTypeId) values (?, ?, ?, ?, ?)",diaryTime.amount, diaryTime.content, diaryTime.time, diaryTime.category, diaryTime.iconTypeId];
     }];
 }
 

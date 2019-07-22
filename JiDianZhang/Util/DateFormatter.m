@@ -30,6 +30,11 @@
     return destDate;
 }
 
++ (NSString*) stringMillisecondFromDate:(NSDate *)date
+{
+    return [NSString stringWithFormat:@"%.0f", [date timeIntervalSince1970]*1000];
+}
+
 + (NSString*) stringFromBirthday:(NSDate*)date{
     NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT+0800"]];
