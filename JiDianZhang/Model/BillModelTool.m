@@ -88,6 +88,27 @@ static FMDatabaseQueue *_queue;
     return dictionary;
 }
 
++(NSMutableArray *)queryWithHistoryOfTheBillTime{
+    __block BillModel * dataTime;
+    __block NSMutableArray *diaryArray = nil;
+    [_queue inDatabase:^(FMDatabase *db){
+        diaryArray = [NSMutableArray array];
+        FMResultSet *rs = nil;
+        rs = [db executeQuery:@"select * from Bill_Tab"];
+        while (rs.next){
+            dataTime = [[BillModel alloc]init];
+            dataTime.ids = [rs intForColumn:@"ids"];
+            dataTime.amount = [rs stringForColumn:@"amount"];
+            dataTime.content = [rs stringForColumn:@"content"];
+            dataTime.time = [rs stringForColumn:@"time"];
+            dataTime.category = [rs stringForColumn:@"category"];
+            dataTime.iconTypeId = [rs stringForColumn:@"iconTypeId"];
+            [diaryArray addObject:dataTime];
+        }
+    }];
+    return diaryArray;
+}
+
 +(void)deleteTime:(int)ids{
     [_queue inDatabase:^(FMDatabase *db){
         [db executeUpdate:@"delete from Bill_Tab where ids = ?", [NSNumber numberWithInt:ids]];

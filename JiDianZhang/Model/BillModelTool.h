@@ -14,6 +14,8 @@
 
 +(NSMutableDictionary *)queryWithCurrentMonthTime;
 
++(NSMutableArray *)queryWithHistoryOfTheBillTime;
+
 +(void)deleteTime:(int)ids;
 
 +(void)insertTime:(BillModel *)diaryTime;
