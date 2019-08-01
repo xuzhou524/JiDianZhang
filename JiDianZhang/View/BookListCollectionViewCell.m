@@ -212,7 +212,7 @@
     [_iconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.contentView);
         make.left.equalTo(self.contentView).offset(15);
-        make.width.height.equalTo(@38);
+        make.width.height.equalTo(@36);
     }];
 
     _titleLabel = [UILabel new];
@@ -223,6 +223,16 @@
     [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.iconImageView);
         make.left.equalTo(self.iconImageView.mas_right).offset(10);
+    }];
+
+    _noteLabel = [UILabel new];
+    _noteLabel.text = @"零食";
+    _noteLabel.font = LCFont2(14);
+    _noteLabel.textColor = [LCColor LCColor_113_120_150];
+    [self.contentView addSubview:_noteLabel];
+    [_noteLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(self.titleLabel);
+        make.left.equalTo(self.titleLabel.mas_right).offset(10);
     }];
 
     _numberLabel = [UILabel new];
@@ -238,19 +248,19 @@
 
 -(void)bind:(BillModel *)model{
     self.numberLabel.text = model.amount;
+    self.noteLabel.text = model.content;
     if ([model.category isEqualToString:JD_CATEGORY_SPEND]) {
         ImageModel * imageModel = [SpendManager readLocalSpendIconFileWithImageId:model.iconTypeId];
         self.iconImageView.image = [UIImage imageNamed:imageModel.imageName];
         self.titleLabel.text = imageModel.title;
-        self.numberLabel.text = model.amount;
-        self.numberLabel.textColor = [LCColor LCColor_113_120_150];
+        self.numberLabel.textColor = [LCColor LCColor_110_110_110];
     }else{
         ImageModel * imageModel = [SpendManager readLocalIncomeIconFileWithImageId:model.iconTypeId];
         self.iconImageView.image = [UIImage imageNamed:imageModel.imageName];
         self.titleLabel.text = imageModel.title;
-        self.numberLabel.text = model.amount;
         self.numberLabel.textColor = [LCColor LCColor_243_90_93];
     }
+    
 }
 @end
 
@@ -291,7 +301,7 @@
     _costLabel = [UILabel new];
     _costLabel.text = @"支出: 234,560";
     _costLabel.font = LCFont2(14);
-    _costLabel.textColor = [LCColor LCColor_113_120_150];
+    _costLabel.textColor = [LCColor LCColor_110_110_110];
     [self addSubview:_costLabel];
     [_costLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.timeLabel);

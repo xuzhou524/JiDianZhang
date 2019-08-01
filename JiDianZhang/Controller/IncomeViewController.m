@@ -108,14 +108,19 @@
 
 -(void)saveClick{
     BillModel * billModel = [BillModel new];
-    
-    billModel.amount = self.amountCell.titleTextField.text;
+    if (self.amountCell.titleTextField.text.length > 0) {
+        billModel.amount = self.amountCell.titleTextField.text;
+    }else{
+        return;
+    }
+    if (self.selectModel.imageId) {
+        billModel.iconTypeId = self.selectModel.imageId;
+    }else{
+        return;
+    }
     billModel.content = self.titleAndImageCell.noteTitleTextField.text;
     billModel.time = [DateFormatter stringMillisecondFromDate:[NSDate new]];
     billModel.category = JD_CATEGORY_INCOME;
-    
-    billModel.iconTypeId = self.selectModel.imageId;
-    
     [billModel insertTime:billModel];
     [self.navigationController popViewControllerAnimated:YES];
 }

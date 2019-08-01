@@ -108,16 +108,22 @@
 }
 
 -(void)saveClick{
-    
     BillModel * billModel = [BillModel new];
-    
-    billModel.amount = self.amountCell.titleTextField.text;
+    if (self.selectModel.imageId) {
+        billModel.iconTypeId = self.selectModel.imageId;
+    }else{
+        [MBProgressHUD showIndicatorMessage:@"请选择类型"];
+        return;
+    }
+    if (self.amountCell.titleTextField.text.length > 0) {
+        billModel.amount = self.amountCell.titleTextField.text;
+    }else{
+        [MBProgressHUD showIndicatorMessage:@"请输入金额"];
+        return;
+    }
     billModel.content = self.titleAndImageCell.noteTitleTextField.text;
     billModel.time = [DateFormatter stringMillisecondFromDate:[NSDate new]];
     billModel.category = JD_CATEGORY_SPEND;
-    
-    billModel.iconTypeId = self.selectModel.imageId;
-    
     [billModel insertTime:billModel];
     [self.navigationController popViewControllerAnimated:YES];
     

@@ -26,6 +26,7 @@
 @interface BookCollectionViewCell : UITableViewCell
 @property(nonatomic,strong)UIImageView * iconImageView;
 @property(nonatomic,strong)UILabel * titleLabel;
+@property(nonatomic,strong)UILabel * noteLabel;
 @property(nonatomic,strong)UILabel * numberLabel;
 
 -(void)bind:(BillModel *)model;
