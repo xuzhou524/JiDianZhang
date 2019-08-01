@@ -24,8 +24,8 @@
 
 
 -(NSMutableArray *)queryWithTime;
-
 -(NSMutableDictionary *)queryWithCurrentMonthTime;
+-(NSMutableDictionary *)queryWithAllMonthTime;
 
 -(void)deleteTime:(int)ids;
 

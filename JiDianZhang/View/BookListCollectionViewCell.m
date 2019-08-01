@@ -175,6 +175,23 @@
         make.right.equalTo(self.bgImageView).offset(-15);
     }];
 }
+-(void)bind:(NSMutableArray *)modelArray{
+    BillModel * model = modelArray.firstObject;
+    self.titleLabel.text = [DateFormatter stringFromStringYeayMonth:[DateFormatter dateFromTimeStampString:model.time]];
+    self.numberLabel.text = [NSString stringWithFormat:@"共 %lu 笔",(unsigned long)modelArray.count];
+    
+    NSInteger spendMoney = 0;
+    NSInteger incomeMoney = 0;
+    for (BillModel * model in modelArray) {
+        if ([model.category isEqualToString:JD_CATEGORY_SPEND]) {
+            spendMoney += [model.amount integerValue];
+        }else{
+            incomeMoney += [model.amount integerValue];
+        }
+    }
+    self.costLabel.text = [NSString stringWithFormat:@"支出 ¥ %ld",(long)spendMoney];
+    self.budgetLabel.text = [NSString stringWithFormat:@"收入 ¥ %ld",(long)incomeMoney];
+}
 @end
 
 @implementation BookCollectionViewCell

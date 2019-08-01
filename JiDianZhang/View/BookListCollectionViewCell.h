@@ -19,6 +19,7 @@
 @property(nonatomic,strong)UILabel * costLabel;
 @property(nonatomic,strong)UILabel * budgetLabel;
 @property(nonatomic,strong)UILabel * numberLabel;
+-(void)bind:(NSMutableArray *)modelArray;
 @end
 
 

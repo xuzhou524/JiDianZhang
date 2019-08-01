@@ -18,6 +18,10 @@
     return [BillModelTool queryWithCurrentMonthTime];
 }
 
+-(NSMutableDictionary *)queryWithAllMonthTime{
+    return [BillModelTool queryWithAllMonthTime];
+}
+
 -(void)deleteTime:(int)ids{
     [BillModelTool deleteTime:ids];
 }

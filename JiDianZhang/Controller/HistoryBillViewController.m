@@ -11,9 +11,36 @@
 
 @interface HistoryBillViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property(nonatomic,strong)UICollectionView * collectionView;
+
+@property (nonatomic, strong) NSMutableDictionary * billModelDic;
+@property (nonatomic, strong) NSMutableArray * billDicAllKeyArray;
+@property (nonatomic, strong) BillModel * billModel;
 @end
 
 @implementation HistoryBillViewController
+
+-(BillModel *)billModel{
+    if (_billModel == nil){
+        _billModel = [BillModel new];
+    }
+    return _billModel;
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    self.billModelDic = [self.billModel queryWithAllMonthTime];
+    self.billDicAllKeyArray = (NSMutableArray *)[self.billModelDic allKeys];
+    
+    NSArray * billDicAllKeyArray = [self.billModelDic allKeys];
+    self.billDicAllKeyArray = (NSMutableArray *)[billDicAllKeyArray sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        if([obj1 integerValue] < [obj2 integerValue]){
+            return NSOrderedDescending;
+        }
+        return NSOrderedAscending;
+    }];
+    [self.collectionView reloadData];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -45,11 +72,13 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 12;
+    return self.billDicAllKeyArray.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     BookListCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"BookListCollectionViewCell" forIndexPath:indexPath];
+    NSMutableArray * array = [self.billModelDic objectForKey:self.billDicAllKeyArray[indexPath.row]];
+    [cell bind:array];
     return cell;
 }
 

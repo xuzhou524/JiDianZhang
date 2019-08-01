@@ -88,11 +88,11 @@ static FMDatabaseQueue *_queue;
     return dictionary;
 }
 
-+(NSMutableArray *)queryWithHistoryOfTheBillTime{
++(NSMutableDictionary *)queryWithAllMonthTime{
     __block BillModel * dataTime;
-    __block NSMutableArray *diaryArray = nil;
+    __block NSMutableDictionary * dictionary = nil;
     [_queue inDatabase:^(FMDatabase *db){
-        diaryArray = [NSMutableArray array];
+        dictionary = [NSMutableDictionary new];
         FMResultSet *rs = nil;
         rs = [db executeQuery:@"select * from Bill_Tab"];
         while (rs.next){
@@ -103,10 +103,23 @@ static FMDatabaseQueue *_queue;
             dataTime.time = [rs stringForColumn:@"time"];
             dataTime.category = [rs stringForColumn:@"category"];
             dataTime.iconTypeId = [rs stringForColumn:@"iconTypeId"];
-            [diaryArray addObject:dataTime];
+            
+            NSCalendar *gregorian = [[ NSCalendar alloc ] initWithCalendarIdentifier : NSCalendarIdentifierGregorian];
+            unsigned unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay;
+            //格式化时间
+            NSDate *createDate = [DateFormatter dateFromTimeStampString:dataTime.time];
+            NSDateComponents* components = [gregorian components:unitFlags fromDate:createDate];
+            [components setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT+0800"]];
+            
+            NSMutableArray * array = [dictionary objectForKey:[NSString stringWithFormat:@"%ld%ld",(long)components.year,(long)components.month]];
+            if (array.count <= 0) {
+                array = [NSMutableArray array];
+            }
+            [array addObject:dataTime];
+            [dictionary setObject:array forKey:[NSString stringWithFormat:@"%ld%ld",(long)components.year,(long)components.month]];
         }
     }];
-    return diaryArray;
+    return dictionary;
 }
 
 +(void)deleteTime:(int)ids{

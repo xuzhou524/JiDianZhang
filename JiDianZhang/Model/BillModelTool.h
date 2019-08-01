@@ -13,8 +13,7 @@
 +(NSMutableArray *)queryWithTime;
 
 +(NSMutableDictionary *)queryWithCurrentMonthTime;
-
-+(NSMutableArray *)queryWithHistoryOfTheBillTime;
++(NSMutableDictionary *)queryWithAllMonthTime;
 
 +(void)deleteTime:(int)ids;
 

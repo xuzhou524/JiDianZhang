@@ -18,6 +18,7 @@
 
 + (NSString*) stringFromBirthday:(NSDate*)date;//Date 转 时间字符串  yyyy-MM-dd
 + (NSString*) stringFromStringYeayWeek:(NSDate*)date;//Date 转 时间字符串  yyyy年MM月
++ (NSString*) stringFromStringYeayMonth:(NSDate*)date;//Date 转 时间字符串  yyyy.MM
 + (NSString*) stringFromStringMonthDay:(NSDate*)date;//Date 转 时间字符串  MM月DD日
 + (NSString*) stringFromStringDay:(NSDate*)date;//Date 转 时间字符串  dd
 
