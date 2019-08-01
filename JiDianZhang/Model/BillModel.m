@@ -14,12 +14,16 @@
     return [BillModelTool queryWithTime];
 }
 
--(NSMutableDictionary *)queryWithCurrentMonthTime;{
+-(NSMutableDictionary *)queryWithCurrentMonthTime{
     return [BillModelTool queryWithCurrentMonthTime];
 }
 
 -(NSMutableDictionary *)queryWithAllMonthTime{
     return [BillModelTool queryWithAllMonthTime];
+}
+
+-(NSMutableDictionary *)queryWithOfMonthTime:(NSString *)time{
+    return [BillModelTool queryWithOfMonthTime:time];
 }
 
 -(void)deleteTime:(int)ids{

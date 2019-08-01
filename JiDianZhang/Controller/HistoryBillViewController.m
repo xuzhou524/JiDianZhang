@@ -8,6 +8,7 @@
 
 #import "HistoryBillViewController.h"
 #import "BookListCollectionViewCell.h"
+#import "BillListViewController.h""
 
 @interface HistoryBillViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property(nonatomic,strong)UICollectionView * collectionView;
@@ -75,13 +76,6 @@
     return self.billDicAllKeyArray.count;
 }
 
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    BookListCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"BookListCollectionViewCell" forIndexPath:indexPath];
-    NSMutableArray * array = [self.billModelDic objectForKey:self.billDicAllKeyArray[indexPath.row]];
-    [cell bind:array];
-    return cell;
-}
-
 //item大小
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     return CGSizeMake((ScreenWidth - 20) / 2.00 , 150);
@@ -92,5 +86,18 @@
     return UIEdgeInsetsMake(0, 10, 0, 10);
 }
 
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    BookListCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"BookListCollectionViewCell" forIndexPath:indexPath];
+    NSMutableArray * array = [self.billModelDic objectForKey:self.billDicAllKeyArray[indexPath.row]];
+    [cell bind:array];
+    return cell;
+}
 
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    BillListViewController * billListVC = [BillListViewController new];
+    NSMutableArray * array = [self.billModelDic objectForKey:self.billDicAllKeyArray[indexPath.row]];
+    BillModel * model = array.firstObject;
+    billListVC.time = model.time;
+    [self.navigationController pushViewController:billListVC animated:YES];
+}
 @end

@@ -38,6 +38,7 @@
 		53CDC3FA22CF42A600C7EFAA /* BillModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 53CDC3F922CF42A600C7EFAA /* BillModel.m */; };
 		53CDC3FD22CF42FE00C7EFAA /* BillModelTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 53CDC3FC22CF42FE00C7EFAA /* BillModelTool.m */; };
 		53CDC40022CF48CF00C7EFAA /* DateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 53CDC3FF22CF48CF00C7EFAA /* DateFormatter.m */; };
+		53FCDCC722F28CEF00E3A01E /* BillListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FCDCC622F28CEF00E3A01E /* BillListViewController.m */; };
 		E9B37FF49D08243EA4C61A95 /* Pods_JiDianZhang.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C89CC168FADA25067B725F1C /* Pods_JiDianZhang.framework */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +94,8 @@
 		53CDC3FC22CF42FE00C7EFAA /* BillModelTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BillModelTool.m; sourceTree = "<group>"; };
 		53CDC3FE22CF48CF00C7EFAA /* DateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateFormatter.h; sourceTree = "<group>"; };
 		53CDC3FF22CF48CF00C7EFAA /* DateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateFormatter.m; sourceTree = "<group>"; };
+		53FCDCC522F28CEF00E3A01E /* BillListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BillListViewController.h; sourceTree = "<group>"; };
+		53FCDCC622F28CEF00E3A01E /* BillListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BillListViewController.m; sourceTree = "<group>"; };
 		715464DCA0FB3A91A317A4BA /* Pods-JiDianZhang.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JiDianZhang.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JiDianZhang/Pods-JiDianZhang.debug.xcconfig"; sourceTree = "<group>"; };
 		952497252F634D2DDB1A1616 /* Pods-JiDianZhang.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JiDianZhang.release.xcconfig"; path = "Pods/Target Support Files/Pods-JiDianZhang/Pods-JiDianZhang.release.xcconfig"; sourceTree = "<group>"; };
 		C89CC168FADA25067B725F1C /* Pods_JiDianZhang.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JiDianZhang.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -224,6 +227,8 @@
 				53879C7922A117F2000B97F8 /* HomeViewController.m */,
 				53A2C4B122A4DAD500CE799C /* HistoryBillViewController.h */,
 				53A2C4B222A4DAD500CE799C /* HistoryBillViewController.m */,
+				53FCDCC522F28CEF00E3A01E /* BillListViewController.h */,
+				53FCDCC622F28CEF00E3A01E /* BillListViewController.m */,
 				53A2C4C222A6171000CE799C /* AddBookViewController.h */,
 				53A2C4C322A6171000CE799C /* AddBookViewController.m */,
 				53A753BC22C4A66300B6A4BC /* SpendViewController.h */,
@@ -406,6 +411,7 @@
 				53A753B722C4781700B6A4BC /* CategoryCollectionViewCell.m in Sources */,
 				53CDC3FD22CF42FE00C7EFAA /* BillModelTool.m in Sources */,
 				537CA1C922DEB8D500B355EB /* SpendManager.m in Sources */,
+				53FCDCC722F28CEF00E3A01E /* BillListViewController.m in Sources */,
 				53A753BE22C4A66300B6A4BC /* SpendViewController.m in Sources */,
 				53A753BB22C4A1AD00B6A4BC /* SPPageMenu.m in Sources */,
 				53A2C4C722A617C100CE799C /* UserViewController.m in Sources */,

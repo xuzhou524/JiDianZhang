@@ -88,6 +88,47 @@ static FMDatabaseQueue *_queue;
     return dictionary;
 }
 
++(NSMutableDictionary *)queryWithOfMonthTime:(NSString *)time{
+    __block BillModel * dataTime;
+    __block NSMutableDictionary * dictionary = nil;
+    [_queue inDatabase:^(FMDatabase *db){
+        dictionary = [NSMutableDictionary new];
+        FMResultSet *rs = nil;
+        rs = [db executeQuery:@"select * from Bill_Tab"];
+        while (rs.next){
+            dataTime = [[BillModel alloc]init];
+            dataTime.ids = [rs intForColumn:@"ids"];
+            dataTime.amount = [rs stringForColumn:@"amount"];
+            dataTime.content = [rs stringForColumn:@"content"];
+            dataTime.time = [rs stringForColumn:@"time"];
+            dataTime.category = [rs stringForColumn:@"category"];
+            dataTime.iconTypeId = [rs stringForColumn:@"iconTypeId"];
+            
+            NSCalendar *gregorian = [[ NSCalendar alloc ] initWithCalendarIdentifier : NSCalendarIdentifierGregorian];
+            unsigned unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay;
+            
+            //格式化时间
+            NSDate *createDate = [DateFormatter dateFromTimeStampString:dataTime.time];
+            NSDateComponents* components = [gregorian components:unitFlags fromDate:createDate];
+            [components setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT+0800"]];
+            //格式化时间
+            NSDate *date = [DateFormatter dateFromTimeStampString:time];
+            NSDateComponents* newDateComponent = [gregorian components:unitFlags fromDate:date];
+            [newDateComponent setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT+0800"]];
+            
+            if (components.year == newDateComponent.year && components.month == newDateComponent.month) {
+                NSMutableArray * array = [dictionary objectForKey:[NSString stringWithFormat:@"%ld",(long)components.day]];
+                if (array.count <= 0) {
+                    array = [NSMutableArray array];
+                }
+                [array addObject:dataTime];
+                [dictionary setObject:array forKey:[NSString stringWithFormat:@"%ld",(long)components.day]];
+            }
+        }
+    }];
+    return dictionary;
+}
+
 +(NSMutableDictionary *)queryWithAllMonthTime{
     __block BillModel * dataTime;
     __block NSMutableDictionary * dictionary = nil;
