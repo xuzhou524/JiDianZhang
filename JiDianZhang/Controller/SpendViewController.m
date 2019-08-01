@@ -119,6 +119,7 @@
     billModel.iconTypeId = self.selectModel.imageId;
     
     [billModel insertTime:billModel];
+    [self.navigationController popViewControllerAnimated:YES];
     
 }
 

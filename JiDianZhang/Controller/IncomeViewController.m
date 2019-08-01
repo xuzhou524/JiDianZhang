@@ -12,6 +12,10 @@
 @interface IncomeViewController ()<UITableViewDelegate,UITableViewDataSource,UICollectionViewDataSource,UICollectionViewDelegate>
 @property(nonatomic,strong)UICollectionView * collectionView;
 @property(nonatomic,strong)UITableView * tableView;
+
+@property(nonatomic,strong)TextFieldTableViewCell * amountCell;
+@property(nonatomic,strong)TitleAndImageTableViewCell * titleAndImageCell;
+@property(nonatomic,strong)ImageModel * selectModel;
 @end
 
 @implementation IncomeViewController
@@ -85,11 +89,13 @@
         TextFieldTableViewCell * cell = getCell(TextFieldTableViewCell);
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.titleLabel.text = @"金额";
+        self.amountCell = cell;
         return cell;
     }else if (indexPath.row == 1){
         TitleAndImageTableViewCell * cell = getCell(TitleAndImageTableViewCell);
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.timeTitleLabel.text = @"今天";
+        self.titleAndImageCell = cell;
         return cell;
     }else if (indexPath.row == 2){
         SaveTableViewCell * cell = getCell(SaveTableViewCell);
@@ -101,7 +107,17 @@
 }
 
 -(void)saveClick{
+    BillModel * billModel = [BillModel new];
     
+    billModel.amount = self.amountCell.titleTextField.text;
+    billModel.content = self.titleAndImageCell.noteTitleTextField.text;
+    billModel.time = [DateFormatter stringMillisecondFromDate:[NSDate new]];
+    billModel.category = JD_CATEGORY_INCOME;
+    
+    billModel.iconTypeId = self.selectModel.imageId;
+    
+    [billModel insertTime:billModel];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark -- UICollectionView DataSource
@@ -122,4 +138,7 @@
     return cell;
 }
 
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    self.selectModel = [SpendManager readLocalIncomeIconFile][indexPath.row];
+}
 @end
