@@ -18,6 +18,10 @@
 		53879C7A22A117F2000B97F8 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53879C7922A117F2000B97F8 /* HomeViewController.m */; };
 		53879C7D22A118D9000B97F8 /* LCNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53879C7C22A118D9000B97F8 /* LCNavigationViewController.m */; };
 		53879C8022A118E9000B97F8 /* LCColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 53879C7E22A118E9000B97F8 /* LCColor.m */; };
+		53A2AA5322F97E48006D6E5E /* UserViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 53A2AA5122F97E47006D6E5E /* UserViewTableViewCell.m */; };
+		53A2AA5622F97EAB006D6E5E /* LCWebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53A2AA5522F97EAB006D6E5E /* LCWebViewViewController.m */; };
+		53A2AA5922F97EC7006D6E5E /* AboutDeveloperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53A2AA5722F97EC7006D6E5E /* AboutDeveloperViewController.m */; };
+		53A2AA5C22F97F72006D6E5E /* AppListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53A2AA5A22F97F72006D6E5E /* AppListViewController.m */; };
 		53A2C4B022A4C69300CE799C /* BookListCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 53A2C4AF22A4C69300CE799C /* BookListCollectionViewCell.m */; };
 		53A2C4B322A4DAD500CE799C /* HistoryBillViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53A2C4B222A4DAD500CE799C /* HistoryBillViewController.m */; };
 		53A2C4B622A4DBD200CE799C /* add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 53A2C4B422A4DBD100CE799C /* add@2x.png */; };
@@ -64,6 +68,14 @@
 		53879C7F22A118E9000B97F8 /* LCColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCColor.h; sourceTree = "<group>"; };
 		53879C8122A1192B000B97F8 /* JiDianZhangPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JiDianZhangPrefixHeader.pch; sourceTree = "<group>"; };
 		53879C8222A119E4000B97F8 /* JiDianZhangHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JiDianZhangHeader.h; sourceTree = "<group>"; };
+		53A2AA5122F97E47006D6E5E /* UserViewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserViewTableViewCell.m; sourceTree = "<group>"; };
+		53A2AA5222F97E47006D6E5E /* UserViewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserViewTableViewCell.h; sourceTree = "<group>"; };
+		53A2AA5422F97EAB006D6E5E /* LCWebViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCWebViewViewController.h; sourceTree = "<group>"; };
+		53A2AA5522F97EAB006D6E5E /* LCWebViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCWebViewViewController.m; sourceTree = "<group>"; };
+		53A2AA5722F97EC7006D6E5E /* AboutDeveloperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutDeveloperViewController.m; sourceTree = "<group>"; };
+		53A2AA5822F97EC7006D6E5E /* AboutDeveloperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutDeveloperViewController.h; sourceTree = "<group>"; };
+		53A2AA5A22F97F72006D6E5E /* AppListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppListViewController.m; sourceTree = "<group>"; };
+		53A2AA5B22F97F72006D6E5E /* AppListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppListViewController.h; sourceTree = "<group>"; };
 		53A2C4AE22A4C69300CE799C /* BookListCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookListCollectionViewCell.h; sourceTree = "<group>"; };
 		53A2C4AF22A4C69300CE799C /* BookListCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookListCollectionViewCell.m; sourceTree = "<group>"; };
 		53A2C4B122A4DAD500CE799C /* HistoryBillViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HistoryBillViewController.h; sourceTree = "<group>"; };
@@ -176,6 +188,8 @@
 		53879C7222A1165F000B97F8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				53A2AA5222F97E47006D6E5E /* UserViewTableViewCell.h */,
+				53A2AA5122F97E47006D6E5E /* UserViewTableViewCell.m */,
 				53A2C4AE22A4C69300CE799C /* BookListCollectionViewCell.h */,
 				53A2C4AF22A4C69300CE799C /* BookListCollectionViewCell.m */,
 				53A753B522C4781700B6A4BC /* CategoryCollectionViewCell.h */,
@@ -242,6 +256,12 @@
 				53A753C022C4A67C00B6A4BC /* IncomeViewController.m */,
 				53A2C4C522A617C100CE799C /* UserViewController.h */,
 				53A2C4C622A617C100CE799C /* UserViewController.m */,
+				53A2AA5422F97EAB006D6E5E /* LCWebViewViewController.h */,
+				53A2AA5522F97EAB006D6E5E /* LCWebViewViewController.m */,
+				53A2AA5822F97EC7006D6E5E /* AboutDeveloperViewController.h */,
+				53A2AA5722F97EC7006D6E5E /* AboutDeveloperViewController.m */,
+				53A2AA5B22F97F72006D6E5E /* AppListViewController.h */,
+				53A2AA5A22F97F72006D6E5E /* AppListViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -417,16 +437,20 @@
 				53CDC3FD22CF42FE00C7EFAA /* BillModelTool.m in Sources */,
 				537CA1C922DEB8D500B355EB /* SpendManager.m in Sources */,
 				53FCDCC722F28CEF00E3A01E /* BillListViewController.m in Sources */,
+				53A2AA5622F97EAB006D6E5E /* LCWebViewViewController.m in Sources */,
 				53A753BE22C4A66300B6A4BC /* SpendViewController.m in Sources */,
 				53A753BB22C4A1AD00B6A4BC /* SPPageMenu.m in Sources */,
 				53A2C4C722A617C100CE799C /* UserViewController.m in Sources */,
+				53A2AA5322F97E48006D6E5E /* UserViewTableViewCell.m in Sources */,
 				53879C5B22A11391000B97F8 /* AppDelegate.m in Sources */,
 				53A753C122C4A67C00B6A4BC /* IncomeViewController.m in Sources */,
 				53A2C4B022A4C69300CE799C /* BookListCollectionViewCell.m in Sources */,
 				53FCDCCD22F2992500E3A01E /* MBProgressHUD+GZAdditions.m in Sources */,
 				53A2C4B322A4DAD500CE799C /* HistoryBillViewController.m in Sources */,
 				53879C6C22A11393000B97F8 /* main.m in Sources */,
+				53A2AA5922F97EC7006D6E5E /* AboutDeveloperViewController.m in Sources */,
 				53879C7D22A118D9000B97F8 /* LCNavigationViewController.m in Sources */,
+				53A2AA5C22F97F72006D6E5E /* AppListViewController.m in Sources */,
 				53A2C4C422A6171000CE799C /* AddBookViewController.m in Sources */,
 				53CDC40022CF48CF00C7EFAA /* DateFormatter.m in Sources */,
 				53879C7A22A117F2000B97F8 /* HomeViewController.m in Sources */,
