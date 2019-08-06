@@ -78,16 +78,12 @@
     liftLabel.textColor = [LCColor LCColor_77_92_127];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:liftLabel];
     
-    UIButton * rightBtn = [UIButton new];
-    UIImage * addIamge = [[UIImage imageNamed:@"add"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    rightBtn.tintColor = [LCColor LCColor_77_92_127];
-    [rightBtn setImage:addIamge forState:UIControlStateNormal];
+    UIButton * rightBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
+    [rightBtn setImage:[UIImage imageNamed:@"ic_user"] forState:UIControlStateNormal];
     [rightBtn addTarget:self action:@selector(rightBtnClick) forControlEvents:UIControlEventTouchUpInside];
     
     UIButton * tubiaoBtn = [UIButton new];
-    UIImage * tubiaoIamge = [[UIImage imageNamed:@"add"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    tubiaoBtn.tintColor = [LCColor LCColor_77_92_127];
-    [tubiaoBtn setImage:tubiaoIamge forState:UIControlStateNormal];
+    [tubiaoBtn setImage:[UIImage imageNamed:@"ic_lishi"] forState:UIControlStateNormal];
     [tubiaoBtn addTarget:self action:@selector(tubiaoClick) forControlEvents:UIControlEventTouchUpInside];
     
     self.navigationItem.rightBarButtonItems = @[[[UIBarButtonItem alloc] initWithCustomView:rightBtn],[[UIBarButtonItem alloc] initWithCustomView:tubiaoBtn]];
