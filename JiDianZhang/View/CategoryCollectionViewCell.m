@@ -35,16 +35,20 @@
     [self.contentView addSubview:_iconImageView];
     [_iconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.contentView);
-        make.bottom.equalTo(self.titleLabel.mas_top);
+        make.bottom.equalTo(self.titleLabel.mas_top).offset(-3);
         make.width.height.equalTo(@44);
     }];
+    _iconImageView.layer.cornerRadius = 22;
 }
 
 - (void)setSelected:(BOOL)selected{
     if (selected) {
-       _iconImageView.backgroundColor = [UIColor redColor];
+        _iconImageView.layer.shadowColor = [LCColor LCColor_77_92_127].CGColor;
+        _iconImageView.layer.shadowOffset = CGSizeMake(0,0);
+        _iconImageView.layer.shadowOpacity = 0.7;
+        _iconImageView.layer.shadowRadius = 2;
     }else{
-       _iconImageView.backgroundColor = [LCColor backgroudColor];
+        _iconImageView.layer.shadowOpacity = 0;
     }
 }
 @end
