@@ -8,10 +8,11 @@
 
 #import "SpendViewController.h"
 #import "CategoryCollectionViewCell.h"
+#import "TPKeyboardAvoidingTableView.h"
 
 @interface SpendViewController ()<UITableViewDelegate,UITableViewDataSource,UICollectionViewDataSource,UICollectionViewDelegate>
 @property(nonatomic,strong)UICollectionView * collectionView;
-@property(nonatomic,strong)UITableView * tableView;
+@property(nonatomic,strong)TPKeyboardAvoidingTableView * tableView;
 
 @property(nonatomic,strong)TextFieldTableViewCell * amountCell;
 @property(nonatomic,strong)TitleAndImageTableViewCell * titleAndImageCell;
@@ -39,7 +40,7 @@
 }
 
 -(void)createTableView{
-    _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+    _tableView = [[TPKeyboardAvoidingTableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView.backgroundColor = [LCColor backgroudColor];
     _tableView.delegate = self;
