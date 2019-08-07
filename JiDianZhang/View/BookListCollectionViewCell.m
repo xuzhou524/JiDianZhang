@@ -25,8 +25,8 @@
     bgImageView.backgroundColor = [LCColor LCColor_77_92_127];
     [self addSubview:bgImageView];
     [bgImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self).offset(15);
-        make.right.equalTo(self).offset(-15);
+        make.left.equalTo(self).offset(20);
+        make.right.equalTo(self).offset(-20);
         make.top.equalTo(self).offset(15);
         make.bottom.equalTo(self).offset(-10);
     }];
@@ -38,23 +38,27 @@
     [newDateComponent setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT+0800"]];
 
     UILabel * monthLabel = [UILabel new];
-    monthLabel.text =[NSString stringWithFormat:@"%ld月",(long)newDateComponent.month];
-    monthLabel.font = LCFont2(15);
+    if (newDateComponent.month < 10) {
+        monthLabel.text =[NSString stringWithFormat:@"0%ld月",(long)newDateComponent.month];
+    }else{
+        monthLabel.text =[NSString stringWithFormat:@"%ld月",(long)newDateComponent.month];
+    }
+    monthLabel.font = LCFont2(20);
     monthLabel.textColor = [LCColor backgroudColor];
     [bgImageView addSubview:monthLabel];
     [monthLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(bgImageView).offset(15);
-        make.top.equalTo(bgImageView.mas_centerY).offset(10);
+        make.top.equalTo(bgImageView.mas_centerY).offset(5);
     }];
 
     UILabel * yearLabel = [UILabel new];
-    yearLabel.text = [NSString stringWithFormat:@"%ld",(long)newDateComponent.year];
+    yearLabel.text = [NSString stringWithFormat:@"%ld年",(long)newDateComponent.year];
     yearLabel.font = LCFont2(15);
     yearLabel.textColor = [LCColor backgroudColor];
     [bgImageView addSubview:yearLabel];
     [yearLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(bgImageView).offset(15);
-        make.bottom.equalTo(monthLabel.mas_top).offset(-5);
+        make.bottom.equalTo(monthLabel.mas_top).offset(-8);
     }];
     
     UIView * linView = [UIView new];
@@ -68,7 +72,7 @@
     }];
 
     _budgetLabel = [UILabel new];
-    _budgetLabel.font = LCFont2(15);
+    _budgetLabel.font = LCFont2(20);
     _budgetLabel.textColor = [LCColor backgroudColor];
     [bgImageView addSubview:_budgetLabel];
     [_budgetLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -83,15 +87,15 @@
     [bgImageView addSubview:budgetTitleLabel];
     [budgetTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.budgetLabel);
-        make.bottom.equalTo(self.budgetLabel.mas_top).offset(-5);
+        make.bottom.equalTo(self.budgetLabel.mas_top).offset(-8);
     }];
 
     _costLabel = [UILabel new];
-    _costLabel.font = LCFont2(15);
+    _costLabel.font = LCFont2(20);
     _costLabel.textColor = [LCColor backgroudColor];
     [bgImageView addSubview:_costLabel];
     [_costLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.budgetLabel.mas_right).offset(20);
+        make.left.equalTo(self.budgetLabel.mas_right).offset(50);
         make.centerY.equalTo(monthLabel);
     }];
 
@@ -102,7 +106,7 @@
     [bgImageView addSubview:costTitleLabel];
     [costTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.costLabel);
-        make.bottom.equalTo(self.costLabel.mas_top).offset(-5);
+        make.bottom.equalTo(self.costLabel.mas_top).offset(-8);
     }];
 }
 
@@ -222,7 +226,7 @@
     [self.contentView addSubview:_titleLabel];
     [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.iconImageView);
-        make.left.equalTo(self.iconImageView.mas_right).offset(10);
+        make.left.equalTo(self.iconImageView.mas_right).offset(5);
     }];
 
     _noteLabel = [UILabel new];
@@ -285,7 +289,7 @@
     [self addSubview:_timeLabel];
     [_timeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self).offset(0);
-        make.left.equalTo(self).offset(15);
+        make.left.equalTo(self).offset(20);
     }];
 
     _weekLabel = [UILabel new];
@@ -305,7 +309,7 @@
     [self addSubview:_costLabel];
     [_costLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.timeLabel);
-        make.right.equalTo(self).offset(-15);
+        make.right.equalTo(self).offset(-20);
     }];
     
     _budgetLabel = [UILabel new];

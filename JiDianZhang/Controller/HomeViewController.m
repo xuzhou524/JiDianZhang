@@ -114,16 +114,16 @@
     [self.view addSubview:_footBgView];
     [_footBgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.bottom.equalTo(self.view);
-        make.height.equalTo(@90);
+        make.height.equalTo(@100);
     }];
     
     UIView * addView = [UIView new];
     addView.backgroundColor = [LCColor LCColor_77_92_127];
     [_footBgView addSubview:addView];
     [addView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.footBgView).offset(15);
-        make.left.equalTo(self.footBgView).offset(15);
-        make.right.equalTo(self.footBgView).offset(-15);
+        make.top.equalTo(self.footBgView).offset(10);
+        make.left.equalTo(self.footBgView).offset(20);
+        make.right.equalTo(self.footBgView).offset(-20);
         make.height.equalTo(@48);
     }];
     addView.layer.shadowColor= [LCColor LCColor_110_110_110].CGColor;//阴影颜色
@@ -186,7 +186,7 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 55;
+    return 52;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{

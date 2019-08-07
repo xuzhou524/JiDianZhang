@@ -27,7 +27,7 @@
     _iconImageView.layer.masksToBounds = YES;
     [self.contentView addSubview:_iconImageView];
     [_iconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(self.contentView).offset(-50);
+        make.bottom.equalTo(self.contentView).offset(-70);
         make.centerX.equalTo(self.contentView);
         make.width.height.equalTo(@88);
     }];
@@ -38,7 +38,7 @@
     _titleLabel.textColor = [LCColor LCColor_77_92_127];
     [self.contentView addSubview:_titleLabel];
     [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.iconImageView.mas_bottom).offset(15);
+        make.top.equalTo(self.iconImageView.mas_bottom).offset(20);
         make.centerX.equalTo(self.contentView);
     }];
 }
