@@ -103,7 +103,7 @@
 
 -(BookTotalHeadView *)headView{
     if (_headView == nil) {
-        _headView = [[BookTotalHeadView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 110)];
+        _headView = [[BookTotalHeadView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 120)];
     }
     return _headView;
 }

@@ -95,7 +95,7 @@
     _costLabel.textColor = [LCColor backgroudColor];
     [bgImageView addSubview:_costLabel];
     [_costLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.budgetLabel.mas_right).offset(50);
+        make.left.equalTo(self.budgetLabel.mas_right).offset(40);
         make.centerY.equalTo(monthLabel);
     }];
 
