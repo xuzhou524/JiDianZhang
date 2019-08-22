@@ -639,7 +639,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.longdai.JiDianZhang;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xuzhou.JiDianZhang;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -659,7 +659,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.longdai.JiDianZhang;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xuzhou.JiDianZhang;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
